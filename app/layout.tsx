@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import Analytics from '@/components/Analytics';
 import { JsonLd, orgSchema, websiteSchema } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <Analytics />
       </body>
     </html>
   );
