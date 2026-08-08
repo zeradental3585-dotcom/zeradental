@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { CITIES, getCity } from '@/lib/cities';
 import { PLANS } from '@/lib/pricing';
 import { SITE, WA } from '@/lib/site';
-import { CheckList, CTABand, FAQ, Process, Testimonials } from '@/components/Sections';
+import { CheckList, CTABand, FAQ, Process, Proof } from '@/components/Sections';
 import { WhatsAppIcon, Arrow, Check } from '@/components/Icons';
 import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/JsonLd';
 import LeadForm from '@/components/LeadForm';
@@ -207,7 +207,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       </section>
 
       <Process />
-      <Testimonials />
+      <Proof />
       <FAQ items={faqs} title={`Dental websites in ${c.name} — your questions`} />
 
       {/* OTHER CITIES */}

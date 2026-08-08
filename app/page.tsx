@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CITIES } from '@/lib/cities';
 import { PLANS } from '@/lib/pricing';
 import { WA, SITE } from '@/lib/site';
-import { CTABand, FAQ, Process, Stat, Testimonials, CheckList } from '@/components/Sections';
+import { CTABand, FAQ, Process, Stat, Proof, CheckList } from '@/components/Sections';
 import { Arrow, WhatsAppIcon, Check, Star } from '@/components/Icons';
 import { JsonLd, faqSchema, serviceSchema } from '@/components/JsonLd';
 
@@ -257,7 +257,7 @@ export default function Home() {
       </section>
 
       <Process />
-      <Testimonials />
+      <Proof />
 
       {/* CITIES */}
       <section className="wrap my-20">

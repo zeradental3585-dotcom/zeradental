@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { WA } from '@/lib/site';
-import { Check, Arrow, WhatsAppIcon, Star } from './Icons';
+import { Check, Arrow, WhatsAppIcon } from './Icons';
 
 export function CTABand({
   title = 'Ready to stop losing patients to Google?',
@@ -68,33 +68,65 @@ export function Stat({ value, label }: { value: string; label: string }) {
   );
 }
 
-export function Testimonials() {
-  const t = [
-    { quote: 'We had a Wix site nobody visited. Zera rebuilt it around treatment pages and our Google listing. Enquiries went from 4-5 a month to over 30, and most come in on WhatsApp now.', name: 'Dr. Rakesh Mehta', role: 'Mehta Dental Care', city: 'Indore' },
-    { quote: 'What sold me was that they explained why each page existed instead of just showing a pretty design. The site was live in nine days and I got my first online booking the same week.', name: 'Dr. Sneha Iyer', role: 'Iyer Smile Studio', city: 'Coimbatore' },
-    { quote: 'They set up the review system along with the website. We crossed 120 Google reviews in five months and now rank in the top three for implants in our area.', name: 'Dr. Aman Deep Singh', role: 'Deep Dental Clinic', city: 'Chandigarh' },
+export function Proof() {
+  const facts = [
+    { n: '6', l: 'live properties we built, wrote and ranked ourselves' },
+    { n: '0', l: 'rupees of ad spend behind any of them' },
+    { n: 'EN + HI', l: 'bilingual content engineering, in-house' },
+    { n: '7 days', l: 'from kickoff to a live, indexed clinic site' },
   ];
   return (
     <section className="wrap my-20">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="eyebrow">Clinic owners</span>
-        <h2 className="h2 mt-2">What changes after launch</h2>
+        <span className="eyebrow">Straight answer</span>
+        <h2 className="h2 mt-2">We are new to dentistry. We are not new to ranking.</h2>
+        <p className="lede mt-4">
+          Plenty of agencies will show you a wall of five-star quotes. We would rather tell you exactly what we have
+          done and let you check it yourself.
+        </p>
       </div>
-      <div className="mt-10 grid gap-5 lg:grid-cols-3">
-        {t.map((x) => (
-          <figure key={x.name} className="card flex flex-col">
-            <div className="flex gap-0.5 text-mint-500">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4" />)}</div>
-            <blockquote className="mt-4 flex-1 text-[15.5px] leading-relaxed text-ink-700/90">&ldquo;{x.quote}&rdquo;</blockquote>
-            <figcaption className="mt-5 border-t border-ink/[.07] pt-4">
-              <div className="text-[14.5px] font-bold text-ink">{x.name}</div>
-              <div className="text-[13px] text-ink-300">{x.role} · {x.city}</div>
-            </figcaption>
-          </figure>
-        ))}
+
+      <div className="mt-12 grid gap-5 lg:grid-cols-[1.1fr,.9fr]">
+        <div className="card">
+          <h3 className="h3">What we have actually built</h3>
+          <p className="mt-3 text-[15.5px] leading-relaxed text-ink-500">
+            Zera Technologies runs its own portfolio of search-driven websites across India — land records, education,
+            parenting, civic information. Every one of them was designed, written and ranked in-house, on organic search
+            alone. They are all live right now and you can open any of them.
+          </p>
+          <div className="mt-6 grid grid-cols-2 gap-5 border-t border-ink/[.07] pt-6 sm:grid-cols-4">
+            {facts.map((f) => (
+              <div key={f.l}>
+                <div className="font-display text-[26px] leading-none tracking-[-.02em] text-ink">{f.n}</div>
+                <div className="mt-1.5 text-[12.5px] leading-snug text-ink-300">{f.l}</div>
+              </div>
+            ))}
+          </div>
+          <Link href="/portfolio" className="btn-ghost mt-6 !px-5 !py-2.5 !text-sm">
+            See every live site <Arrow className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="rounded-2xl border border-mint-200 bg-mint-50/60 p-6 sm:p-7">
+          <span className="eyebrow">Founding clinics</span>
+          <h3 className="h3 mt-2">The first ten clinics get founding terms</h3>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-500">
+            We are building our dental portfolio, and being early is worth something. The first ten clinics we work with
+            get:
+          </p>
+          <div className="mt-5">
+            <CheckList items={[
+              'Founding pricing, locked for life on any future package',
+              'Direct WhatsApp access to the person building your site',
+              'Double the standard free-edit window',
+              'A written 90-day plan, so you can hold us to something specific',
+            ]} />
+          </div>
+          <p className="mt-5 text-[13.5px] leading-relaxed text-ink-300">
+            In exchange we ask one thing: if the site works, let us show it as a case study.
+          </p>
+        </div>
       </div>
-      <p className="mt-6 text-center text-[12.5px] text-ink-300">
-        Clinic names shown with permission. Results vary by city, competition and how actively a clinic collects reviews.
-      </p>
     </section>
   );
 }

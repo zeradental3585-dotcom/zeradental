@@ -70,17 +70,23 @@ export default function Portfolio() {
 
       <section className="wrap my-20">
         <div className="mx-auto max-w-3xl rounded-3xl border border-ink/[.08] bg-sand-50 p-8 sm:p-12">
-          <span className="eyebrow">A note on dental case studies</span>
-          <h2 className="h2 mt-2">Clinic work is under NDA until clients approve it</h2>
+          <span className="eyebrow">Being straight with you</span>
+          <h2 className="h2 mt-2">No dental case studies yet</h2>
           <p className="lede mt-5">
-            Dental clinics are competitive with each other locally, and most of ours prefer we do not publish their site
-            as a case study next to a competitor in the same city. We respect that.
+            We are early in dentistry. Rather than dress that up, here is the honest version: the sites above are ours,
+            they are live, and they rank on organic search with no ad spend behind them. That is the skill we are
+            bringing to your clinic.
           </p>
           <p className="lede mt-4">
-            If you want to see clinic work relevant to your city and treatment mix, message us on WhatsApp and we will
-            share live links privately, along with the clinic&apos;s permission to talk to them directly.
+            What we can show you instead is a demo clinic site built to the exact standard yours would be — real
+            structure, real treatment pages, real speed — plus a written plan for your city before you pay anything.
+            Ask on WhatsApp and we will send both.
           </p>
-          <Link href="/contact" className="btn-dark mt-7">Ask for relevant examples <Arrow className="h-4 w-4" /></Link>
+          <p className="mt-5 text-[14px] leading-relaxed text-ink-300">
+            When clinics do come on board, we publish them as case studies only with written permission, and never next
+            to a direct competitor in the same city.
+          </p>
+          <Link href="/contact" className="btn-dark mt-7">Ask for the demo and a plan <Arrow className="h-4 w-4" /></Link>
         </div>
       </section>
 
