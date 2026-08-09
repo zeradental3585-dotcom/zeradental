@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     'Free 2-minute audit for Indian dental clinics. Score your website, Google Business Profile, reviews and local ranking out of 100, and get a prioritised fix plan on WhatsApp. No cost, no obligation.',
   alternates: { canonical: '/free-website-audit' },
   openGraph: {
+    siteName: SITE.name,
+    locale: 'en_IN',
     title: 'Free Dental Clinic Website Audit — Score Your Clinic in 2 Minutes',
     description: 'Find out exactly why patients are choosing the clinic down the road. 9 questions, instant score, free fix plan on WhatsApp.',
     url: `${SITE.url}/free-website-audit`,

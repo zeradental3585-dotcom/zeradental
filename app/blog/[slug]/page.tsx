@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: { canonical: `/blog/${p.slug}` },
     openGraph: {
       type: 'article',
+      siteName: SITE.name,
+      locale: 'en_IN',
       title: p.metaTitle,
       description: p.metaDesc,
       url: `${SITE.url}/blog/${p.slug}`,

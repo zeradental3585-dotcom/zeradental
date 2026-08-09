@@ -31,11 +31,9 @@ export const metadata: Metadata = {
     title: 'Dental Website Design India — Clinic Websites From ₹14,999',
     description: SITE.description,
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dental Website Design India — Clinic Websites From ₹14,999',
-    description: SITE.description,
-  },
+  // No title/description here on purpose — Next then falls back to each page's
+  // own title/description instead of stamping the homepage one on every share.
+  twitter: { card: 'summary_large_image' },
   robots: {
     index: true, follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },

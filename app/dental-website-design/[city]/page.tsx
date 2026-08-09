@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     title: { absolute: title },
     description,
     alternates: { canonical: `/dental-website-design/${c.slug}` },
-    openGraph: { title, description, url: `${SITE.url}/dental-website-design/${c.slug}` },
+    openGraph: { siteName: SITE.name, locale: 'en_IN', title, description, url: `${SITE.url}/dental-website-design/${c.slug}` },
   };
 }
 

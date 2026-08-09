@@ -24,6 +24,30 @@ WhatsApp conversations.
 | Guides | 11 | `/blog/[slug]` — top-of-funnel keyword content |
 | Legal | Privacy, Terms | Compliance + Zera Technologies ownership disclosure |
 
+## Social / WhatsApp previews
+
+Every page generates its own 1200×630 Open Graph card at build time via `next/og`:
+
+| Route | Card |
+|---|---|
+| `/` and general pages | Brand card — "Your next patient is on Google right now." |
+| `/dental-website-design/[city]` | "Dental website design in {City}" |
+| `/blog/[slug]` | Article title + category + read time |
+| `/services/[slug]` | Service headline + price |
+| `/free-website-audit` | "How findable is your dental clinic, really?" |
+
+Notes for anyone editing these:
+
+- Fonts are **bundled in `assets/fonts/`**, not fetched. `next/og` otherwise pulls a default
+  font from jsDelivr at build time, which makes builds fail without network access.
+- Both `latin` **and** `latin-ext` subsets are loaded — `latin` alone is missing U+20B9 (₹)
+  and the rupee renders as a fallback box.
+- Cards are ~100–115KB. WhatsApp silently skips previews over roughly 300KB, so keep them light.
+- Satori only supports flexbox + inline styles, and any element with more than one child
+  needs an explicit `display: flex`.
+- If a page defines its own `openGraph` in `generateMetadata`, it does **not** inherit the
+  root card — give that segment its own `opengraph-image.tsx`.
+
 ## SEO built in
 
 - Per-page titles, descriptions and canonicals

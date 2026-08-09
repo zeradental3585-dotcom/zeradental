@@ -5,10 +5,11 @@
  * SETUP (5 minutes) — see SETUP.md in this folder.
  */
 
+var SHEET_ID   = '19ONSwVHEqaByU31M-jywXSzkEETzkT_ugS0Dnop1Yt0'; // Zera Dental Leads
 var SHEET_NAME = 'Leads';
 
 // Optional: get an email whenever a new lead arrives. Leave '' to disable.
-var NOTIFY_EMAIL = '';
+var NOTIFY_EMAIL = 'ubsatishsingh@gmail.com,zeradental3585@gmail.com';
 
 var HEADERS = [
   'Timestamp (IST)',
@@ -84,7 +85,7 @@ function doGet() {
 /* ---------- helpers ---------- */
 
 function getSheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById(SHEET_ID);
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
