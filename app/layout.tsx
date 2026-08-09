@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Analytics from '@/components/Analytics';
+import SiteChrome from '@/components/SiteChrome';
 import { JsonLd, orgSchema, websiteSchema } from '@/components/JsonLd';
 import { SITE } from '@/lib/site';
 
@@ -63,10 +64,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
           Skip to content
         </a>
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <SiteChrome header={<Header />} footer={<Footer />} float={<WhatsAppFloat />}>
+          {children}
+        </SiteChrome>
         <Analytics />
       </body>
     </html>
