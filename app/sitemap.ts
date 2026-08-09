@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${SITE.url}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE.url}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${SITE.url}/research/indian-dental-website-study`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${SITE.url}/portfolio`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE.url}/about`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
     { url: `${SITE.url}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },

@@ -1,0 +1,15 @@
+[
+{"site":"bestdentistinpatna.com","city":"Patna","kb":5672,"req":153,"loadMs":null,"https":1,"vp":1,"wa":1,"tel":1,"form":1,"book":1,"tp":8,"ld":1,"map":1,"words":1475},
+{"site":"smylexl.com","city":"Indore","kb":716,"req":43,"loadMs":850,"https":1,"vp":1,"wa":0,"tel":1,"form":1,"book":1,"tp":15,"ld":1,"map":0,"words":583},
+{"site":"dentalclinicindore.com","city":"Indore","kb":609,"req":18,"loadMs":762,"https":1,"vp":1,"wa":1,"tel":1,"form":1,"book":1,"tp":0,"ld":1,"map":1,"words":463},
+{"site":"smilearchdental.com","city":"Bhopal","kb":468,"req":44,"loadMs":754,"https":1,"vp":1,"wa":0,"tel":0,"form":1,"book":0,"tp":0,"ld":0,"map":0,"words":79},
+{"site":"nagpurdentist.com","city":"Nagpur","kb":536,"req":29,"loadMs":1180,"https":1,"vp":1,"wa":1,"tel":1,"form":0,"book":0,"tp":9,"ld":0,"map":0,"words":449},
+{"site":"aayushdentalclinic.com","city":"Nagpur","kb":138,"req":12,"loadMs":1627,"https":1,"vp":1,"wa":0,"tel":1,"form":0,"book":0,"tp":4,"ld":1,"map":1,"words":585},
+{"site":"denticanagpur.in","city":"Nagpur","kb":76,"req":8,"loadMs":2746,"https":1,"vp":1,"wa":0,"tel":1,"form":0,"book":1,"tp":4,"ld":1,"map":0,"words":268},
+{"site":"omdentalnagpur.com","city":"Nagpur","kb":172,"req":23,"loadMs":1225,"https":1,"vp":1,"wa":0,"tel":1,"form":0,"book":1,"tp":5,"ld":1,"map":1,"words":748},
+{"site":"smilekraftnagpur.com","city":"Nagpur","kb":2987,"req":24,"loadMs":940,"https":1,"vp":1,"wa":0,"tel":1,"form":0,"book":1,"tp":6,"ld":1,"map":1,"words":433},
+{"site":"nandhinidentalcare.com","city":"Coimbatore","kb":165,"req":39,"loadMs":1261,"https":1,"vp":1,"wa":0,"tel":1,"form":1,"book":0,"tp":3,"ld":1,"map":0,"words":343},
+{"site":"drruchidental.com","city":"Coimbatore","kb":84,"req":7,"loadMs":1504,"https":1,"vp":1,"wa":1,"tel":1,"form":1,"book":1,"tp":10,"ld":1,"map":1,"words":809},
+{"site":"marudhardentalclinic.com","city":"Jaipur","kb":839,"req":55,"loadMs":663,"https":1,"vp":1,"wa":1,"tel":1,"form":1,"book":1,"tp":5,"ld":1,"map":1,"words":1730},
+{"site":"vivandental.com","city":"Jaipur","kb":1434,"req":17,"loadMs":776,"https":1,"vp":1,"wa":1,"tel":1,"form":1,"book":1,"tp":8,"ld":1,"map":1,"words":931}
+]
