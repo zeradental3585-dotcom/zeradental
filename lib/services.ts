@@ -33,7 +33,8 @@ export const SERVICES: Service[] = [
       {
         h: 'Why most dental websites in India fail',
         p: [
-          'Walk through the first page of Google results for "dental clinic" in almost any Indian city and you will find the same three problems repeating. The sites take five or six seconds to load on mobile. They have a single "Services" page listing fourteen treatments in a bullet list. And there is no way to contact the clinic except a phone number that goes unanswered after 7pm.',
+          'We went looking for the problem everyone assumes exists — slow, insecure, non-responsive clinic sites — and measured 13 of them. Every single one had HTTPS. Every one had a mobile viewport tag. The technical basics are genuinely solved in 2026, and any agency still opening with "your site is slow" is usually wrong.',
+          'What we did find was worse in a quieter way: 54% had no WhatsApp link, 38% had no map embed, and 38% had no enquiry form at all. The failure is commercial, not technical — a fast site that gives a motivated patient nowhere to click.',
           'Each of those is a conversion leak, and together they explain why a clinic can have a website for three years and never trace a single patient to it. A website is not a brochure you tick off a list. It is the thing standing between a patient searching at 9:40pm and a booked chair tomorrow morning.',
           'We design against those three failures specifically. Speed is engineered, not hoped for. Every treatment you want more of gets its own page with its own cost section and FAQ. And every page has a WhatsApp button that opens a chat with a message already written, because that removes the last bit of friction between interest and enquiry.',
         ],
@@ -241,7 +242,7 @@ export const SERVICES: Service[] = [
       {
         h: 'What usually changes for the better',
         p: [
-          'Load time is the most dramatic shift — typical WordPress clinic sites in India load in five to eight seconds on mobile, and the rebuilt version lands between one and two.',
+          'Weight is usually the most dramatic shift. In our measurements the heaviest clinic homepage was 5,672 KB across 153 requests; a rebuilt equivalent lands nearer 200 KB. Whether that is your problem depends entirely on what we find — plenty of clinic sites are already lean, and we will say so.',
           'Structure is the second. Most existing clinic sites have three or four pages. The rebuild expands that into a page per treatment, doctor profiles, area pages and an FAQ section, which multiplies the number of searches you can plausibly rank for.',
           'And finally, conversion: WhatsApp buttons, click-to-call, visible pricing guidance and a booking path, none of which most existing clinic sites have.',
         ],
