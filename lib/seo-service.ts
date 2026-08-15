@@ -66,7 +66,7 @@ export const SEO_FAQS = [
   { q: 'How much does dental SEO cost in India?', a: 'Agencies in India typically charge between ₹8,000 and ₹50,000 a month for dental SEO, with most independent clinics landing in the ₹10,000–₹20,000 range. Our retainers start at ₹8,999 a month for a single-location clinic and go to ₹29,999 for multi-location practices. Everything is month to month — there is no lock-in and no setup fee.' },
   { q: 'How long before dental SEO produces patients?', a: 'Google Business Profile work often shows up first, within two to four weeks, because profile signals update quickly. Organic rankings for treatment keywords typically build over three to six months — faster in cities like Patna, Indore and Coimbatore where competition is thin, slower in Delhi, Mumbai and Bangalore. Anyone promising page-one rankings in 30 days is describing ads, not SEO.' },
   { q: 'Do I need a new website first?', a: 'Often not. If your existing site loads reasonably and has a sensible structure, we can add treatment pages and run SEO on top of it. We will tell you honestly after the free audit — we would rather do ₹9,000 of the right work than sell you a ₹30,000 rebuild you did not need.' },
-  { q: 'What makes you different from other dental SEO agencies?', a: 'We publish our own measurement data. We audited 13 Indian dental clinic websites and released the full dataset, including the finding that 54% had no WhatsApp link. Most agencies assert that your site is broken; we can show you the benchmark and where you sit against it.' },
+  { q: 'What makes you different from other dental SEO agencies?', a: 'We publish our own measurement data. We audited 21 Indian dental clinic websites and released the full dataset, including the finding that 52% had no WhatsApp link. Most agencies assert that your site is broken; we can show you the benchmark and where you sit against it.' },
   { q: 'Can I cancel?', a: 'Any month, with no notice period and no penalty. If SEO is not producing results we would rather you stop paying than resent us. Everything we build — pages, profile, citations — stays yours.' },
   { q: 'Do you guarantee first-page rankings?', a: 'No, and treat anyone who does with suspicion. Google neither sells nor guarantees positions. What we commit to is that every controllable signal gets handled properly and that you see honest monthly reporting, including the months where numbers go sideways.' },
 ];
@@ -103,7 +103,7 @@ export const SEO_SECTIONS = [
     p: [
       'Most agencies tell you your website is broken. We measured it.',
       'We audited independent dental clinic websites across six Indian cities, recording page weight, request counts, treatment-page depth, booking paths and WhatsApp availability — then published the full dataset, method and limitations.',
-      'The headline: **54% had no WhatsApp link on the homepage**, 38% had no map embed and 38% had no enquiry form at all. Meanwhile 100% had HTTPS and a mobile viewport tag. The technical basics are solved; the commercial ones are not. That finding shaped how we sell, and it contradicted what we ourselves had assumed.',
+      'The headline: **52% had no WhatsApp link on the homepage**, 38% had no map embed and 38% had no enquiry form at all. Meanwhile 100% had HTTPS and a mobile viewport tag. The technical basics are solved; the commercial ones are not. That finding shaped how we sell, and it contradicted what we ourselves had assumed.',
     ],
   },
 ];

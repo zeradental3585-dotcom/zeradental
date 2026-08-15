@@ -33,8 +33,8 @@ export const SERVICES: Service[] = [
       {
         h: 'Why most dental websites in India fail',
         p: [
-          'We went looking for the problem everyone assumes exists — slow, insecure, non-responsive clinic sites — and measured 13 of them. Every single one had HTTPS. Every one had a mobile viewport tag. The technical basics are genuinely solved in 2026, and any agency still opening with "your site is slow" is usually wrong.',
-          'What we did find was worse in a quieter way: 54% had no WhatsApp link, 38% had no map embed, and 38% had no enquiry form at all. The failure is commercial, not technical — a fast site that gives a motivated patient nowhere to click.',
+          'We went looking for the problem everyone assumes exists — slow, insecure, non-responsive clinic sites — and measured 21 of them. Every single one had HTTPS. Every one had a mobile viewport tag. The technical basics are genuinely solved in 2026, and any agency still opening with "your site is slow" is usually wrong.',
+          'What we did find was worse in a quieter way: 52% had no WhatsApp link, 38% had no map embed, and 38% had no enquiry form at all. The failure is commercial, not technical — a fast site that gives a motivated patient nowhere to click.',
           'Each of those is a conversion leak, and together they explain why a clinic can have a website for three years and never trace a single patient to it. A website is not a brochure you tick off a list. It is the thing standing between a patient searching at 9:40pm and a booked chair tomorrow morning.',
           'We design against those three failures specifically. Speed is engineered, not hoped for. Every treatment you want more of gets its own page with its own cost section and FAQ. And every page has a WhatsApp button that opens a chat with a message already written, because that removes the last bit of friction between interest and enquiry.',
         ],

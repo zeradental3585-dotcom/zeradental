@@ -1,13 +1,13 @@
 export const STUDY = {
-  n: 13,
-  cities: 6,
-  attempted: 15,
-  date: '9 August 2026',
+  n: 21,
+  cities: 7,
+  attempted: 26,
+  date: '15 August 2026',
   slug: 'indian-dental-website-study',
-  title: 'We audited 13 Indian dental clinic websites. The results surprised us.',
-  metaTitle: 'Indian Dental Clinic Website Study 2026 — Real Data on 13 Clinics',
+  title: 'We audited 21 Indian dental clinic websites. The results surprised us.',
+  metaTitle: 'Indian Dental Clinic Website Study 2026 — Real Data on 21 Clinics',
   metaDesc:
-    'Original research: we measured page weight, WhatsApp availability, treatment-page depth and booking paths across 13 independent dental clinic websites in 6 Indian cities. 54% had no WhatsApp link.',
+    'Original research: we measured page weight, WhatsApp availability, treatment-page depth and booking paths across 21 independent dental clinic websites in 7 Indian cities. 52% had no WhatsApp link.',
 } as const;
 
 export type Metric = { label: string; pct: number; note: string; good: boolean };
@@ -15,12 +15,12 @@ export type Metric = { label: string; pct: number; note: string; good: boolean }
 export const METRICS: Metric[] = [
   { label: 'HTTPS / SSL', pct: 100, good: true, note: 'Universal. This is no longer a differentiator.' },
   { label: 'Mobile viewport tag', pct: 100, good: true, note: 'Every site is at least attempting to be mobile-friendly.' },
-  { label: 'Click-to-call number', pct: 92, good: true, note: 'Nearly universal — Indian clinics understand the phone.' },
-  { label: 'Schema markup', pct: 85, good: true, note: 'Mostly automatic, added by WordPress SEO plugins.' },
-  { label: 'Booking language on page', pct: 69, good: false, note: '"Book appointment" wording present — not always a working system.' },
-  { label: 'Google Map embed', pct: 62, good: false, note: 'Nearly 4 in 10 make you hunt for the location.' },
-  { label: 'Any enquiry form', pct: 62, good: false, note: 'A form is not a booking system, but it is a capture path.' },
-  { label: 'WhatsApp link', pct: 46, good: false, note: 'The single biggest gap. In India. Where WhatsApp is the default.' },
+  { label: 'Click-to-call number', pct: 90, good: true, note: 'Nearly universal — Indian clinics understand the phone.' },
+  { label: 'Schema markup', pct: 76, good: true, note: 'Mostly automatic, added by WordPress SEO plugins.' },
+  { label: 'Booking language on page', pct: 67, good: false, note: '"Book appointment" wording present — not always a working system.' },
+  { label: 'Google Map embed', pct: 67, good: false, note: 'A third make you hunt for the location.' },
+  { label: 'Any enquiry form', pct: 67, good: false, note: 'A form is not a booking system, but it is a capture path.' },
+  { label: 'WhatsApp link', pct: 48, good: false, note: 'The single biggest gap. In India. Where WhatsApp is the default.' },
 ];
 
 export const CLINICS = [
@@ -37,12 +37,20 @@ export const CLINICS = [
   { site: 'drruchidental.com', city: 'Coimbatore', kb: 84, req: 7, tp: 10, words: 809, wa: true },
   { site: 'marudhardentalclinic.com', city: 'Jaipur', kb: 839, req: 55, tp: 5, words: 1730, wa: true },
   { site: 'vivandental.com', city: 'Jaipur', kb: 1434, req: 17, tp: 8, words: 931, wa: true },
+  { site: 'rootsdentalcarelko.in', city: 'Lucknow', kb: 311, req: 23, tp: 0, words: 331, wa: false },
+  { site: 'cosmodontdentalclinics.com', city: 'Lucknow', kb: 1707, req: 116, tp: 6, words: 1629, wa: true },
+  { site: 'manomaydentalcare.in', city: 'Lucknow', kb: 1645, req: 243, tp: 4, words: 1271, wa: false },
+  { site: 'realtooth.in', city: 'Lucknow', kb: 2639, req: 86, tp: 10, words: 342, wa: true },
+  { site: 'infinitydental.in', city: 'Lucknow', kb: 708, req: 77, tp: 15, words: 566, wa: true },
+  { site: 'prasaddentalclinic.com', city: 'Bhopal', kb: 644, req: 45, tp: 0, words: 2047, wa: false },
+  { site: 'dentalprecisionbhopal.com', city: 'Bhopal', kb: 5112, req: 79, tp: 10, words: 992, wa: false },
+  { site: 'smmsdc.com', city: 'Bhopal', kb: 1144, req: 81, tp: 0, words: 610, wa: true },
 ];
 
 export const FAQS = [
-  { q: 'How many dental websites did you test?', a: 'We attempted 15 independent clinic websites across six Indian cities and got clean measurements from 13. Two sites rendered their content via JavaScript after our measurement point, so we excluded them rather than report misleading zeroes. This is round one — we are expanding the sample toward 100.' },
+  { q: 'How many dental websites did you test?', a: 'We attempted 26 independent clinic websites across seven Indian cities and got clean measurements from 21. Five rendered their content via JavaScript after our measurement point, so we excluded them rather than report misleading zeroes. This is round two — round one covered 13 clinics and we are continuing toward 100.' },
   { q: 'What exactly did you measure?', a: 'For each homepage: total transferred bytes and request count from the browser Resource Timing API, presence of HTTPS, a mobile viewport tag, a click-to-call link, a WhatsApp link, an enquiry form, booking language, a Google Map embed, JSON-LD schema markup, the number of distinct treatment pages linked from the homepage, and homepage word count. Everything is objectively verifiable from the public page source.' },
   { q: 'Why not use Google PageSpeed scores?', a: 'Lighthouse scores vary between runs and depend on test conditions, which makes them poor for comparing sites fairly. Transferred bytes and request counts are connection-independent and reproducible, so we used those instead.' },
-  { q: 'Is 13 clinics enough to draw conclusions?', a: 'It is enough to identify a pattern, not enough to publish a precise national figure. Treat these as directional findings from a first sample. We have been explicit about the sample size everywhere rather than rounding it up into a headline.' },
-  { q: 'Which clinics were included?', a: 'Independent, clinic-owned websites surfaced through ordinary Google searches for dental clinics in Patna, Indore, Bhopal, Nagpur, Coimbatore and Jaipur. We deliberately excluded large corporate chains, whose websites are built to a different standard and are not representative of independent practices.' },
+  { q: 'Is 21 clinics enough to draw conclusions?', a: 'It is enough to identify a clear pattern, not enough to publish a precise national figure. The headline finding barely moved when we went from 13 clinics to 21 — 52% became 52% — which suggests it is stable. Treat these as directional findings from a growing sample.' },
+  { q: 'Which clinics were included?', a: 'Independent, clinic-owned websites surfaced through ordinary Google searches for dental clinics in Patna, Indore, Bhopal, Nagpur, Coimbatore, Jaipur and Lucknow. We deliberately excluded large corporate chains, whose websites are built to a different standard and are not representative of independent practices.' },
 ];

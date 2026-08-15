@@ -6,3 +6,9 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Internal sales material — never commit to a public repo.
+# clinics.json IS published deliberately (CC-BY dataset on the study page);
+# the outreach sheet is not.
+data/*.xlsx
+*outreach*

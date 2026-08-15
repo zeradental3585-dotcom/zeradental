@@ -65,7 +65,7 @@ export default function StudyPage() {
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-mint-500/20 blur-3xl" />
             <div className="relative">
               <span className="eyebrow !text-mint-400">The headline finding</span>
-              <p className="mt-3 font-display text-[46px] leading-none tracking-[-.03em] text-white sm:text-[76px]">54%</p>
+              <p className="mt-3 font-display text-[46px] leading-none tracking-[-.03em] text-white sm:text-[76px]">52%</p>
               <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-white/75">
                 of the dental clinic websites we measured had <strong className="text-white">no WhatsApp link anywhere on the
                 homepage</strong>. In India. In a country where WhatsApp is how people talk to businesses, more than half of
@@ -121,9 +121,9 @@ export default function StudyPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="h2">Page weight: a median that lies</h2>
             <p className="lede mt-3">
-              Median homepage weight was <strong className="font-semibold text-ink">536 KB</strong> — perfectly respectable.
-              The mean was <strong className="font-semibold text-ink">1,069 KB</strong>, double that. One clinic dragged the
-              whole average up on its own.
+              Median homepage weight was <strong className="font-semibold text-ink">708 KB</strong> — perfectly respectable.
+              The mean was <strong className="font-semibold text-ink">1,324 KB</strong>, nearly double. Four sites over 2 MB drag
+              the average up on their own.
             </p>
             <div className="mt-8 space-y-2">
               {[...CLINICS].sort((a, b) => b.kb - a.kb).map((c) => (
@@ -141,8 +141,8 @@ export default function StudyPage() {
             </div>
             <p className="mt-5 text-[14px] leading-relaxed text-ink-300">
               The heaviest site — the top-ranking dentist in Patna — served <strong className="text-ink">5.5 MB across 153
-              requests</strong> on its homepage. On a mid-range Android over patchy 4G, that is a genuinely painful wait.
-              But it is an outlier, not the norm, and pretending otherwise would be dishonest.
+              requests</strong>. One Lucknow clinic made <strong className="text-ink">243 separate requests</strong> to load a single page. On a mid-range Android over patchy 4G, that is a genuinely painful wait.
+              But four of 21 sites exceeded 2 MB, so the heavy tail is real even if the median is fine.
             </p>
           </div>
         </section>
@@ -156,12 +156,12 @@ export default function StudyPage() {
               problem and ignored the <em>commercial</em> one.
             </p>
             <ul>
-              <li><strong>54% have no WhatsApp link</strong> — the single most-used contact channel in India.</li>
-              <li><strong>38% have no map embed</strong>, so a patient cannot see whether the clinic is near them.</li>
-              <li><strong>38% have no enquiry form at all</strong> — a phone number is the entire conversion path.</li>
-              <li><strong>3 of 13 offer neither WhatsApp nor any booking language</strong>. If you find them at 10pm, there is genuinely nothing to do but remember to ring tomorrow.</li>
-              <li><strong>5 of 13 link fewer than five treatment pages</strong>, and two link none at all — so they cannot rank for &ldquo;root canal cost&rdquo; or &ldquo;braces near me&rdquo; no matter how fast the site loads.</li>
-              <li><strong>46% have homepages under 500 words</strong>, with the thinnest at 79 words.</li>
+              <li><strong>52% have no WhatsApp link</strong> — the single most-used contact channel in India.</li>
+              <li><strong>33% have no map embed</strong>, so a patient cannot see whether the clinic is near them.</li>
+              <li><strong>33% have no enquiry form at all</strong> — a phone number is the entire conversion path.</li>
+              <li><strong>4 of 21 offer neither WhatsApp nor any booking language</strong>. If you find them at 10pm, there is genuinely nothing to do but remember to ring tomorrow.</li>
+              <li><strong>5 of 21 link no treatment pages at all</strong> — so they cannot rank for &ldquo;root canal cost&rdquo; or &ldquo;braces near me&rdquo; no matter how fast the site loads.</li>
+              <li><strong>38% have homepages under 500 words</strong>, with the thinnest at 79 words.</li>
             </ul>
             <p>
               A fast website that gives a motivated patient nowhere to click is not a technical failure. It is a business

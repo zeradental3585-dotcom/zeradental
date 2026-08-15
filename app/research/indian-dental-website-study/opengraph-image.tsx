@@ -9,9 +9,9 @@ export default async function Image() {
   return new ImageResponse(
     (
       <OgCard
-        eyebrow="Original research · 13 clinics"
-        title="54% of Indian dental websites have no WhatsApp link"
-        footnote="Free data · 6 cities measured"
+        eyebrow="Original research · 21 clinics"
+        title="52% of Indian dental websites have no WhatsApp link"
+        footnote="Free data · 7 cities measured"
       />
     ),
     { ...size, fonts: ogFonts }

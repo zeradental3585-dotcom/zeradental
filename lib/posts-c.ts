@@ -30,7 +30,7 @@ export const POSTS_C: Post[] = [
       ]},
       { h: 'WordPress via a freelancer', p: [
         '**Cost:** ₹8,000 to ₹40,000 to build, plus ₹3,000 to ₹8,000 a year hosting.',
-        '**Speed:** highly variable, and less uniformly bad than agencies claim. When we measured 13 Indian clinic sites the median homepage was 536 KB — respectable. But the spread was enormous: the heaviest was 5,672 KB across 153 requests. A plugin-heavy WordPress build is where that weight comes from.',
+        '**Speed:** highly variable, and less uniformly bad than agencies claim. When we measured 21 Indian clinic sites the median homepage was 536 KB — respectable. But the spread was enormous: the heaviest was 5,672 KB across 153 requests. A plugin-heavy WordPress build is where that weight comes from.',
         '**SEO:** excellent potential with the right plugins and a competent builder. Poor in practice when the builder does not do keyword research.',
         '**Maintenance:** this is the hidden cost. Plugins and core need regular updates. Skipped updates are the single most common reason Indian clinic sites get hacked, injected with spam and delisted by Google.',
         '**Verdict:** the most common choice in India and a perfectly reasonable one — provided you find a builder who does research, keeps the plugin count low, and someone maintains it afterwards.',
