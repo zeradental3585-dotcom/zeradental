@@ -27,6 +27,22 @@ export default function Services() {
       </section>
 
       <section className="wrap">
+        <Link
+          href="/dental-seo-services-india"
+          className="group mb-5 flex flex-col gap-4 rounded-3xl border border-mint-300 bg-mint-50/60 p-7 transition-all hover:shadow-lift sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <span className="eyebrow">Monthly retainer</span>
+            <h2 className="h3 mt-1.5">Dental SEO services</h2>
+            <p className="mt-2 max-w-2xl text-[15.5px] leading-relaxed text-ink-500">
+              Ongoing Map Pack rankings, treatment-keyword content and review systems — for clinics that want patients
+              every month, not just a website. From ₹8,999/month, no lock-in.
+            </p>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-3 text-[14.5px] font-semibold text-white">
+            See retainers <Arrow className="h-4 w-4" />
+          </span>
+        </Link>
         <div className="grid gap-5 lg:grid-cols-2">
           {SERVICES.map((s, i) => (
             <Link

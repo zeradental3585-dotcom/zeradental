@@ -27,6 +27,7 @@ export default function Footer() {
             <h3 className="text-[13px] font-bold uppercase tracking-wider text-ink">Services</h3>
             <ul className="mt-4 space-y-2.5 text-[14.5px] text-ink-500">
               <li><Link href="/services/dental-website-design" className="hover:text-mint-600">Dental website design</Link></li>
+              <li><Link href="/dental-seo-services-india" className="hover:text-mint-600">Dental SEO services</Link></li>
               <li><Link href="/services/local-seo-for-dentists" className="hover:text-mint-600">Local SEO for dentists</Link></li>
               <li><Link href="/services/google-business-profile" className="hover:text-mint-600">Google Business Profile</Link></li>
               <li><Link href="/services/appointment-booking" className="hover:text-mint-600">Online appointment booking</Link></li>

@@ -7,7 +7,7 @@ import { Tooth, WhatsAppIcon } from './Icons';
 const NAV = [
   { href: '/services', label: 'Services' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/portfolio', label: 'Work' },
+  { href: '/dental-seo-services-india', label: 'SEO' },
   { href: '/locations', label: 'Cities' },
   { href: '/blog', label: 'Guides' },
   { href: '/about', label: 'About' },
