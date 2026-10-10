@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city } = await params;
   const c = getCity(city);
   if (!c) return {};
-  const title = `Dental Website Design in ${c.name} — Clinic Websites From ₹14,999`;
-  const description = `Website design for dental clinics in ${c.name}, ${c.state}. Mobile-first, Google Map Pack optimised, WhatsApp booking built in. Live in 7 days from ₹14,999. Free clinic audit.`;
+  const title = `Dental Website Design & Local SEO in ${c.name} — From ₹14,999`;
+  const description = `Dental website design and local SEO for dentists in ${c.name}, ${c.state}. Mobile-first, Google Map Pack optimised, WhatsApp booking built in. Live in 7 days from ₹14,999. Free clinic audit.`;
   return {
     title: { absolute: title },
     description,
@@ -80,7 +80,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               <h1 className="h1">Dental website design in {c.name}</h1>
               <p className="lede mt-5">{c.angle}</p>
               <p className="mt-4 text-[15.5px] leading-relaxed text-ink-500">
-                Zera Dental builds fast, Map-Pack-optimised websites for dental clinics across {c.name}, {c.state} —
+                Zera Dental builds fast websites with built-in local SEO for dental clinics across {c.name}, {c.state} —
                 including {c.areas.slice(0, 3).join(', ')} and {c.areas[3]}. Live in 7 days, from{' '}
                 <strong className="font-semibold text-ink">₹14,999</strong>.
               </p>
