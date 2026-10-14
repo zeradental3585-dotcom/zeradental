@@ -131,6 +131,23 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* PMS CROSS-SELL */}
+      <section className="wrap my-20">
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-3xl border border-ink/[.08] bg-sand-50 p-8 text-center sm:flex-row sm:text-left lg:p-10">
+          <div>
+            <span className="eyebrow">Already have a website?</span>
+            <h2 className="h2 mt-2">Run your clinic on Zera PMS</h2>
+            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-500">
+              Track every patient from enquiry to recall on one board, with WhatsApp follow-ups and review
+              requests built in. ₹7,999/month per clinic, ₹9,999 one-time setup — no per-patient fees.
+            </p>
+          </div>
+          <a href="https://pms.zeradental.in" target="_blank" rel="noopener noreferrer" className="btn-dark shrink-0">
+            See Zera PMS <Arrow className="h-4 w-4" />
+          </a>
+        </div>
+      </section>
+
       {/* COMPARISON */}
       <section className="wrap my-20">
         <div className="mx-auto max-w-2xl text-center">

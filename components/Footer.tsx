@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link href="/services/appointment-booking" className="hover:text-mint-600">Online appointment booking</Link></li>
               <li><Link href="/services/website-redesign" className="hover:text-mint-600">Clinic website redesign</Link></li>
               <li><Link href="/pricing" className="hover:text-mint-600">Pricing &amp; packages</Link></li>
+              <li><a href="https://pms.zeradental.in" target="_blank" rel="noopener noreferrer" className="hover:text-mint-600">Zera PMS (clinic software)</a></li>
             </ul>
           </nav>
 
