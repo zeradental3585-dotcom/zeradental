@@ -165,6 +165,21 @@ t('word count excludes script and style content', () => {
   assert.ok(r.extras.words <= 6, `expected ~5 words, got ${r.extras.words}`);
 });
 
+t('HTML entities in title, description and H1 are decoded', () => {
+  const html = `<html><head><title>Dr. Ruchi&#39;s Dental Care &amp; Implants</title>
+    <meta name="description" content="Caring &quot;family&quot; dentistry &mdash; Coimbatore">
+    </head><body><h1>Best Dental &amp; Implant Clinic</h1></body></html>`;
+  const r = inspect(html, U());
+  assert.equal(r.extras.title, "Dr. Ruchi's Dental Care & Implants");
+  assert.match(r.extras.metaDescription!, /Caring "family" dentistry \u2014 Coimbatore/);
+  assert.equal(r.extras.h1, 'Best Dental & Implant Clinic');
+});
+
+t('a double-encoded ampersand does not decode twice', () => {
+  const r = inspect(`<html><head><title>A &amp;#39; B</title></head><body></body></html>`, U());
+  assert.equal(r.extras.title, "A &#39; B");
+});
+
 t('weights sum to 100 across the eight checks', () => {
   const r = inspect(good, U());
   assert.equal(r.checks.reduce((s, c) => s + c.weight, 0), 100);
