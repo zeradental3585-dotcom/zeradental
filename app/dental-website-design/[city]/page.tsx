@@ -89,7 +89,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <a href={WA.city(c.name)} target="_blank" rel="noopener noreferrer" className="btn-wa">
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp us from {c.name}
                 </a>
-                <Link href="/free-website-audit" className="btn-ghost">Free clinic audit <Arrow className="h-4 w-4" /></Link>
+                <Link href="/free-website-preview" className="btn-ghost">See your clinic&apos;s website free <Arrow className="h-4 w-4" /></Link>
               </div>
 
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-ink-500">
