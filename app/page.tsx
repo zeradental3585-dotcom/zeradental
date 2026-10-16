@@ -58,8 +58,8 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/free-website-audit" className="btn-primary">
-                Get my free clinic audit <Arrow className="h-4 w-4" />
+              <Link href="/free-website-preview" className="btn-primary">
+                See my clinic&apos;s website, free <Arrow className="h-4 w-4" />
               </Link>
               <a href={WA.general} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <WhatsAppIcon className="h-4 w-4 text-[#25D366]" /> Talk on WhatsApp
@@ -67,7 +67,7 @@ export default function Home() {
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-ink-500">
-              {['No advance for the audit', 'Domain + hosting included', 'You own everything'].map((x) => (
+              {['Free preview in 60 seconds', 'Domain + hosting included', 'You own everything'].map((x) => (
                 <span key={x} className="flex items-center gap-1.5">
                   <Check className="h-3.5 w-3.5 text-mint-500" /> {x}
                 </span>
