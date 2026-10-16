@@ -26,7 +26,7 @@ const FAQS = [
   { q: 'Who can see my preview?', a: 'Only people you share the link with. Previews are not listed on Google. When you go live, the site moves to your own domain, such as yourclinicname.in.' },
   { q: 'Can I change the design and the text?', a: 'Yes, all of it. Tell us on WhatsApp what you would like changed: colours, wording, treatments, photos, prices. Changes before launch are free, and every package includes free edits after launch too.' },
   { q: 'Why do you ask for my WhatsApp number?', a: 'So we can send you the link again and answer questions about your site. We reply on WhatsApp, we do not make sales calls, and your number is never sold or shared.' },
-  { q: 'What if I already have a website?', a: 'Make a preview anyway and compare it with your current site on your phone. If yours is already fast and brings enquiries, keep it. We would rather tell you that than sell you something you do not need.' },
+  { q: 'What if I already have a website?', a: 'Then run it through our free website audit first — it reads your homepage and scores it in about ten seconds, so you can see whether yours is actually missing anything. If it scores well, keep it. We would rather tell you that than sell you something you do not need. You can also make a preview anyway and compare the two on your phone.' },
 ];
 
 const STEPS = [
