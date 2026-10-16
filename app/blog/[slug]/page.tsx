@@ -105,11 +105,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <div className="mt-12 rounded-2xl bg-ink p-7 sm:p-9">
               <h2 className="font-display text-2xl text-white">Want this done for your clinic?</h2>
               <p className="mt-3 max-w-lg text-[15.5px] leading-relaxed text-white/70">
-                We build search-optimised websites for dental clinics across India, from ₹14,999. Start with the free
-                audit — it tells you which parts of this article actually apply to you.
+                We build search-optimised websites for dental clinics across India, from ₹14,999. See a free preview of
+                your own clinic&apos;s website in about a minute, or start with the free audit.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Link href="/free-website-audit" className="btn-primary">Free clinic audit <Arrow className="h-4 w-4" /></Link>
+                <Link href="/free-website-preview" className="btn-primary">See my clinic&apos;s website, free <Arrow className="h-4 w-4" /></Link>
+                <Link href="/free-website-audit" className="btn !bg-white/10 !text-white ring-1 ring-inset ring-white/20 hover:!bg-white/[.16]">Free clinic audit</Link>
                 <a href={WA.general} target="_blank" rel="noopener noreferrer" className="btn !bg-white/10 !text-white ring-1 ring-inset ring-white/20 hover:!bg-white/[.16]">
                   <WhatsAppIcon className="h-4 w-4 text-[#25D366]" /> WhatsApp
                 </a>
