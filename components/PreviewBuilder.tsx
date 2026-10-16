@@ -66,6 +66,12 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
     if (f.city.trim().length < 2) return setErr('Please add your city.');
     if (!/^[6-9]\d{9}$/.test(phone)) return setErr('Please add a 10-digit WhatsApp number.');
     if (f.maps.trim() && !/^https:\/\//.test(f.maps.trim())) return setErr('The Google Maps link should start with https://. Or leave it empty.');
+    // Honeypot. The hidden "website" field is invisible to people, so anything in it
+    // is almost certainly a bot — stop here rather than spending a builder call on it.
+    // Deliberately NOT a silent drop: a password manager can occasionally autofill a
+    // field named "website", and a real dentist clicking a button that does nothing is
+    // a worse failure than a bot seeing an error. This path still offers WhatsApp.
+    if (f.website.trim()) return setErr("We couldn't verify that submission.");
     setBusy(true);
     let r: { ok?: boolean; url?: string; error?: string; busy?: boolean } = {};
     // The copy promises "about a minute". Without a timeout a hung builder leaves the
