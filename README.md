@@ -18,7 +18,8 @@ WhatsApp conversations.
 | Section | Pages | Purpose |
 |---|---|---|
 | Core | Home, Pricing, Services, Portfolio, About, Contact, FAQ | Conversion |
-| Lead magnet | `/free-website-audit` | 9-question interactive scorecard → Sheets → WhatsApp |
+| Lead magnet | `/free-website-preview` | Clinic details → a real preview site on `sites.zeradental.in` → WhatsApp. Primary magnet, for clinics with no site. |
+| Lead magnet | `/free-website-audit` | Paste a URL → server fetches the homepage and scores 8 checks against the 21-clinic study → Sheets → WhatsApp. Secondary, for clinics that already have a site. |
 | Service pages | 5 | `/services/[slug]` — commercial keyword targets |
 | City pages | 20 | `/dental-website-design/[city]` — local search capture |
 | Guides | 11 | `/blog/[slug]` — top-of-funnel keyword content |
@@ -75,6 +76,16 @@ Everything you would normally want to change lives in `lib/`:
 | `lib/cities.ts` | The 20 city pages — add an entry, get a new page + sitemap entry automatically |
 | `lib/services.ts` | The 5 service pages |
 | `lib/posts-a/b/c.ts` | Blog articles |
+
+### API routes
+
+The site is otherwise fully static. These two need a Node runtime, so the deployment
+must stay on Vercel — a static export would 404 them.
+
+| Route | Purpose |
+| --- | --- |
+| `POST /api/audit` | Fetches a visitor-supplied URL and scores its homepage. Guards against SSRF: http/https only, every resolved IP checked against private ranges, redirects followed manually and re-validated per hop, 2.5 MB and 9 s caps. Logic lives in `lib/audit-inspect.ts`; fixtures in `tests/`. |
+| `POST /api/lead` | Server-side proxy to the Apps Script sheet. Exists because `mode:'no-cors'` returns an opaque response, so client posts resolved even on an error and leads were silently lost. |
 
 ### Environment variables
 
