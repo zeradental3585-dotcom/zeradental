@@ -271,7 +271,13 @@ export default function AuditTool() {
               <li>
                 <strong className="text-ink">Meta description:</strong>{' '}
                 {result.extras.metaDescription
-                  ? `present, ${result.extras.metaDescriptionLength} characters${result.extras.metaDescriptionLength > 165 ? ' — will be truncated in results' : ''}.`
+                  ? `present, ${result.extras.metaDescriptionLength} characters${
+                      result.extras.metaDescriptionLength > 165
+                        ? ' — will be truncated in results'
+                        : result.extras.metaDescriptionLength < 70
+                          ? ' — too short to say much; Google may ignore it and write its own'
+                          : ''
+                    }.`
                   : 'missing, so Google will invent one from your page text.'}
               </li>
               <li>
@@ -282,7 +288,7 @@ export default function AuditTool() {
                 <strong className="text-ink">Images:</strong> {result.extras.images} on the homepage,{' '}
                 {result.extras.imagesWithAlt} with alt text
                 {result.extras.images > 0 && result.extras.imagesWithAlt < result.extras.images
-                  ? ` — ${result.extras.images - result.extras.imagesWithAlt} are invisible to Google and to screen readers.`
+                  ? ` — ${result.extras.images - result.extras.imagesWithAlt} ${result.extras.images - result.extras.imagesWithAlt === 1 ? 'is' : 'are'} invisible to Google and to screen readers.`
                   : '.'}
               </li>
               <li>
