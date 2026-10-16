@@ -67,8 +67,8 @@ export default function About() {
 
           <h2>How we work</h2>
           <p>
-            Everything runs on WhatsApp and video calls, which means we work with clinics in Patna and Coimbatore as
-            easily as in Delhi. Most clinic owners spend under two hours total across an entire project — a short
+            We are based in Bihar, and everything runs on WhatsApp and video calls, which means we work with clinics in
+            Patna and Coimbatore as easily as in Delhi. Most clinic owners spend under two hours total across an entire project — a short
             interview, one round of feedback on the preview link, and approval.
           </p>
           <p>
