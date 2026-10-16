@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { LEAD_ENDPOINT, SITE, wa } from '@/lib/site';
+import { SITE, wa } from '@/lib/site';
 import { WhatsAppIcon, Check, Arrow } from './Icons';
 
 /* "See your clinic's website" — a dentist fills four fields and gets a real preview site on
@@ -42,11 +42,17 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
   const phone = f.phone.replace(/\D/g, '').slice(-10);
 
   function logLead(message: string) {
+    // Goes through our own /api/lead rather than straight to Apps Script with
+    // mode:'no-cors'. An opaque response resolves even on a 4xx/5xx, which is how a
+    // broken sheet once looked like success. Still fire-and-forget on the client:
+    // the preview matters more than the log, but failures now show in the server logs.
+    // name falls back to the clinic because the doctor field is optional here and
+    // /api/lead requires a name.
     try {
-      fetch(LEAD_ENDPOINT, {
-        method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      fetch('/api/lead', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: f.doctor, phone, clinic: f.clinic, city: f.city, source, message,
+          name: f.doctor.trim() || f.clinic.trim(), phone, clinic: f.clinic, city: f.city, source, message,
           page: window.location.pathname, referrer: document.referrer, timestamp: new Date().toISOString(),
         }),
       }).catch(() => {});
@@ -62,14 +68,23 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
     if (f.maps.trim() && !/^https:\/\//.test(f.maps.trim())) return setErr('The Google Maps link should start with https://. Or leave it empty.');
     setBusy(true);
     let r: { ok?: boolean; url?: string; error?: string; busy?: boolean } = {};
+    // The copy promises "about a minute". Without a timeout a hung builder leaves the
+    // dentist watching "Almost ready…" indefinitely with no error and no way out, so
+    // we abort and fall through to the error branch, which offers the WhatsApp route.
+    const ac = new AbortController();
+    const timer = window.setTimeout(() => ac.abort(), 90_000);
     try {
       const res = await fetch(ENDPOINT, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ac.signal,
         body: JSON.stringify({ clinic: f.clinic, city: f.city, doctor: f.doctor, phone, maps_link: f.maps.trim(), treatments: picked, website: f.website }),
       });
       r = await res.json();
-    } catch {
-      r = { ok: false, error: "We couldn't reach our builder just now." };
+    } catch (e) {
+      r = (e as Error)?.name === 'AbortError'
+        ? { ok: false, error: 'Our builder is taking longer than usual.' }
+        : { ok: false, error: "We couldn't reach our builder just now." };
+    } finally {
+      window.clearTimeout(timer);
     }
     setBusy(false);
     if (r.ok && r.url) {
