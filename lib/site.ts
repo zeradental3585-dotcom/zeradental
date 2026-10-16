@@ -13,7 +13,6 @@ export const SITE = {
   description:
     'Zera Dental builds fast, SEO-first websites for dental clinics in India. Google-ready in 7 days, WhatsApp booking built in, from ₹14,999. Free clinic website audit.',
   founded: '2024',
-  addressLocality: 'Patna',
   addressRegion: 'Bihar',
   addressCountry: 'IN',
 } as const;
