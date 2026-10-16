@@ -11,6 +11,22 @@ import {
 
 // ---------- HTML inspection (regex, not a DOM — we only need presence/absence) ----------
 
+/**
+ * Minimal HTML entity decoder for the short strings we surface verbatim (title,
+ * meta description, H1). Without this a real title renders as
+ * "Dr. Ruchi&#39;s Dental Care" on the results page.
+ */
+const decodeEntities = (s: string) =>
+  s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&(quot|apos|lsquo|rsquo|ldquo|rdquo|ndash|mdash|hellip);/gi, (_, n) =>
+      ({ quot: '"', apos: "'", lsquo: '\u2018', rsquo: '\u2019', ldquo: '\u201c', rdquo: '\u201d', ndash: '\u2013', mdash: '\u2014', hellip: '\u2026' } as Record<string, string>)[n.toLowerCase()] ?? _)
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>')
+    .replace(/&amp;/gi, '&') // last, so "&amp;#39;" does not double-decode
+    .trim();
+
 const strip = (html: string) =>
   html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
@@ -63,12 +79,12 @@ export function inspect(html: string, finalUrl: URL) {
 
   // --- extras (reported, not scored) ---
   const titleM = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-  const title = titleM ? titleM[1].replace(/\s+/g, ' ').trim() : null;
+  const title = titleM ? decodeEntities(titleM[1].replace(/\s+/g, ' ')) || null : null;
   const descM = html.match(/<meta[^>]+name\s*=\s*["']description["'][^>]+content\s*=\s*["']([^"']*)["']/i)
     || html.match(/<meta[^>]+content\s*=\s*["']([^"']*)["'][^>]+name\s*=\s*["']description["']/i);
-  const metaDescription = descM ? descM[1].replace(/\s+/g, ' ').trim() : null;
+  const metaDescription = descM ? decodeEntities(descM[1].replace(/\s+/g, ' ')) || null : null;
   const h1M = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i);
-  const h1 = h1M ? h1M[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() : null;
+  const h1 = h1M ? decodeEntities(h1M[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')) || null : null;
 
   const sameHost = (h: string) => {
     try {
