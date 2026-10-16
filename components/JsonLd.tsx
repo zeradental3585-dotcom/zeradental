@@ -23,7 +23,6 @@ export const orgSchema = {
   parentOrganization: { '@type': 'Organization', name: 'Zera Technologies', url: SITE.parentUrl },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: SITE.addressLocality,
     addressRegion: SITE.addressRegion,
     addressCountry: 'IN',
   },
