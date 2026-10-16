@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const core: MetadataRoute.Sitemap = [
     { url: `${SITE.url}/`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${SITE.url}/free-website-audit`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${SITE.url}/free-website-audit`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${SITE.url}/free-website-preview`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${SITE.url}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${SITE.url}/dental-seo-services-india`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
