@@ -37,6 +37,12 @@ export const SITE = {
    * footer, /business-information and the schema all pick it up automatically.
    */
   udyam: 'UDYAM-BR-21-0036443',
+  /**
+   * GSTIN. Public by design — Rule 18 of the CGST Rules requires it to be displayed
+   * at the principal place of business, and it is searchable on the GST portal.
+   * Checksum and embedded PAN verified against the Udyam certificate.
+   */
+  gstin: '10IPDPD7068M1ZQ',
 } as const;
 
 export function wa(message: string) {
