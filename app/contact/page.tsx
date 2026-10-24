@@ -62,7 +62,7 @@ export default function Contact() {
               <address className="mt-3 not-italic text-[14.5px] leading-relaxed text-ink-500">
                 <strong className="font-semibold text-ink">{SITE.legalName}</strong>
                 <br />
-                {SITE.addressLines.join(', ')}
+                <span className="block whitespace-pre-line">{SITE.addressLines.join('\n')}</span>
                 <br />
                 GSTIN: {SITE.gstin}
                 <br />
