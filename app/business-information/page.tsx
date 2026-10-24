@@ -39,7 +39,12 @@ const ROWS: { label: string; value: React.ReactNode }[] = [
   { label: 'Business type', value: 'Web design and development studio' },
   { label: 'GSTIN', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.gstin}</span> },
   { label: 'Udyam Registration Number', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.udyam}</span> },
-  { label: 'Registered location', value: `${SITE.addressLines.join(', ')}` },
+  {
+    label: 'Registered office address',
+    value: (
+      <span className="block whitespace-pre-line">{SITE.addressLines.join('\n')}</span>
+    ),
+  },
   { label: 'Email', value: <a href={`mailto:${SITE.email}`} className="text-mint-600 underline underline-offset-2">{SITE.email}</a> },
   { label: 'Telephone', value: <a href={`tel:${SITE.phoneE164}`} className="text-mint-600 underline underline-offset-2">{SITE.phoneDisplay}</a> },
   { label: 'Date of Udyam registration', value: SITE.udyamRegisteredOn },
@@ -70,7 +75,7 @@ export default function BusinessInformationPage() {
           <p className="lede mt-5">
             This website, <strong className="font-semibold text-ink">{SITE.domain}</strong>, is owned and operated by{' '}
             <strong className="font-semibold text-ink">{SITE.legalName}</strong>, a registered business in{' '}
-            {SITE.addressRegion}, {SITE.addressCountryName}. <strong className="font-semibold text-ink">{SITE.name}</strong>{' '}
+            {SITE.addressLocality}, {SITE.addressRegion}, {SITE.addressCountryName}. <strong className="font-semibold text-ink">{SITE.name}</strong>{' '}
             is a trading name of {SITE.legalName}.
           </p>
           <p className="mt-4 text-[15px] leading-relaxed text-ink-500">
