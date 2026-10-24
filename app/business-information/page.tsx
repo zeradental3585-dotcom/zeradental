@@ -37,6 +37,7 @@ const ROWS: { label: string; value: React.ReactNode }[] = [
   { label: 'Trading name', value: `${SITE.name}` },
   { label: 'Website operated', value: <a href={SITE.url} className="text-mint-600 underline underline-offset-2">{SITE.domain}</a> },
   { label: 'Business type', value: 'Web design and development studio' },
+  { label: 'GSTIN', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.gstin}</span> },
   { label: 'Udyam Registration Number', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.udyam}</span> },
   { label: 'Registered location', value: `${SITE.addressLines.join(', ')}` },
   { label: 'Email', value: <a href={`mailto:${SITE.email}`} className="text-mint-600 underline underline-offset-2">{SITE.email}</a> },
@@ -96,8 +97,9 @@ export default function BusinessInformationPage() {
           </table>
         </div>
         <p className="mx-auto mt-4 max-w-3xl text-[13.5px] leading-relaxed text-ink-300">
-          Udyam is the Government of India&apos;s registration for micro, small and medium enterprises. The number above
-          can be checked on the Ministry of MSME&apos;s Udyam Registration portal.
+          The GSTIN can be verified on the Government of India&apos;s GST portal, and the Udyam number on the Ministry of
+          MSME&apos;s Udyam Registration portal. Both are public registers, so anyone can confirm these details
+          independently.
         </p>
       </section>
 
