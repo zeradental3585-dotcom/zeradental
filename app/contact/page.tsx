@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE, WA } from '@/lib/site';
 import LeadForm from '@/components/LeadForm';
 import { WhatsAppIcon } from '@/components/Icons';
@@ -52,6 +53,26 @@ export default function Contact() {
                   <span className="block text-[14px] text-ink-500">{SITE.email}</span>
                 </span>
               </a>
+            </div>
+
+            {/* Registered-entity details. Verification reviewers look for the legal
+                name next to the contact details, not only in the footer. */}
+            <div className="mt-8 rounded-2xl border border-ink/[.08] p-6">
+              <h2 className="text-[15px] font-bold text-ink">Registered business</h2>
+              <address className="mt-3 not-italic text-[14.5px] leading-relaxed text-ink-500">
+                <strong className="font-semibold text-ink">{SITE.legalName}</strong>
+                <br />
+                {SITE.addressLines.join(', ')}
+                <br />
+                Udyam Registration Number: {SITE.udyam}
+              </address>
+              <p className="mt-3 text-[13.5px] leading-relaxed text-ink-300">
+                {SITE.name} is a trading name of {SITE.legalName}.{' '}
+                <Link href="/business-information" className="underline underline-offset-2 hover:text-mint-600">
+                  Full business information
+                </Link>
+                .
+              </p>
             </div>
 
             <div className="mt-8 rounded-2xl bg-sand-50 p-6">
