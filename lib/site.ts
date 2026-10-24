@@ -1,6 +1,12 @@
 export const SITE = {
   name: 'Zera Dental',
-  legalName: 'Zera Dental',
+  /**
+   * The registered entity. 'Zera Dental' is a trading brand, NOT a legal name —
+   * having the brand here is what failed Meta business verification in Oct 2026
+   * ("your legal business name must be present on the website"). Anything that
+   * states who owns or operates this site must use legalName, never name.
+   */
+  legalName: 'Zera Technologies',
   parent: 'Zera Technologies',
   parentUrl: 'https://zeratech.io/',
   url: 'https://zeradental.in',
@@ -13,8 +19,18 @@ export const SITE = {
   description:
     'Zera Dental builds fast, SEO-first websites for dental clinics in India. Google-ready in 7 days, WhatsApp booking built in, from ₹14,999. Free clinic website audit.',
   founded: '2024',
+  addressLocality: 'Madhepura',
   addressRegion: 'Bihar',
   addressCountry: 'IN',
+  addressCountryName: 'India',
+  /** Printed address used in the public business-identity block. */
+  addressLines: ['Madhepura, Bihar', 'India'],
+  /**
+   * Udyam (MSME) registration number. Rendered only when non-empty, so the site
+   * never displays a placeholder or an invented number. Fill this in and the
+   * footer, /business-information and the schema all pick it up automatically.
+   */
+  udyam: 'UDYAM-BR-21-0036443',
 } as const;
 
 export function wa(message: string) {
