@@ -78,7 +78,7 @@ export default function Footer() {
               <strong className="font-semibold text-ink">{SITE.name}</strong> is a service of{' '}
               <strong className="font-semibold text-ink">{SITE.legalName}</strong>.
               <br />
-              {SITE.legalName}, {SITE.addressLines.join(', ')}
+              {SITE.legalName}, {SITE.addressOneLine}
               {SITE.gstin && (
                 <>
                   <br />
