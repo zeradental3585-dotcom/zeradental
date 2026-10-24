@@ -63,28 +63,50 @@ export default function Footer() {
           </nav>
         </div>
 
+        {/*
+          Business identity block. Present on every page as plain crawlable text.
+          Meta rejected verification in Oct 2026 because the registered name appeared
+          only as a soft "a property of" attribution. The legal name, address and
+          contact details now read as an unambiguous ownership statement. Do not
+          replace SITE.legalName with SITE.name here — that is the exact regression
+          that caused the rejection.
+        */}
         <div className="mt-12 border-t border-ink/[.08] pt-7">
-          <div className="flex flex-col gap-4 text-[13.5px] text-ink-300 sm:flex-row sm:items-center sm:justify-between">
+          <div className="rounded-2xl bg-sand-50 p-5 sm:p-6">
+            <h2 className="text-[12px] font-bold uppercase tracking-wide text-ink-300">Business information</h2>
+            <address className="mt-2.5 not-italic text-[14px] leading-relaxed text-ink-500">
+              <strong className="font-semibold text-ink">{SITE.name}</strong> is a service of{' '}
+              <strong className="font-semibold text-ink">{SITE.legalName}</strong>.
+              <br />
+              {SITE.legalName}, {SITE.addressLines.join(', ')}
+              {SITE.udyam && (
+                <>
+                  <br />
+                  Udyam Registration Number: <span className="font-medium text-ink">{SITE.udyam}</span>
+                </>
+              )}
+              <br />
+              <a href={`mailto:${SITE.email}`} className="hover:text-mint-600">{SITE.email}</a>
+              {' · '}
+              <a href={`tel:${SITE.phoneE164}`} className="hover:text-mint-600">{SITE.phoneDisplay}</a>
+            </address>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-4 text-[13.5px] text-ink-300 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © {year} {SITE.name}, a property of{' '}
+              © {year} {SITE.legalName}. All rights reserved. {SITE.name} is a trading name of{' '}
               <a href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-ink-500 underline underline-offset-2 hover:text-mint-600">
-                Zera Technologies
+                {SITE.legalName}
               </a>
-              . All rights reserved.
+              .
             </p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link href="/business-information" className="hover:text-ink-500">Business information</Link>
               <Link href="/privacy" className="hover:text-ink-500">Privacy</Link>
               <Link href="/terms" className="hover:text-ink-500">Terms</Link>
               <Link href="/sitemap.xml" className="hover:text-ink-500">Sitemap</Link>
             </div>
           </div>
-          <p className="mt-3 text-[13px] text-ink-300">
-            Designed and developed by{' '}
-            <a href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-mint-600">
-              Zera Technologies
-            </a>
-            .
-          </p>
         </div>
       </div>
     </footer>

@@ -14,7 +14,10 @@ export const orgSchema = {
   '@type': 'ProfessionalService',
   '@id': `${SITE.url}/#organization`,
   name: SITE.name,
-  alternateName: 'Zera Dental Web Studio',
+  // legalName is the field verification reviewers and crawlers read for the
+  // registered entity. Keep it exactly as printed on the registration document.
+  legalName: SITE.legalName,
+  alternateName: [SITE.legalName, 'Zera Dental Web Studio'],
   url: SITE.url,
   description: SITE.description,
   telephone: SITE.phoneE164,
@@ -23,9 +26,13 @@ export const orgSchema = {
   parentOrganization: { '@type': 'Organization', name: 'Zera Technologies', url: SITE.parentUrl },
   address: {
     '@type': 'PostalAddress',
+    addressLocality: SITE.addressLocality,
     addressRegion: SITE.addressRegion,
     addressCountry: 'IN',
   },
+  ...(SITE.udyam
+    ? { identifier: { '@type': 'PropertyValue', propertyID: 'Udyam Registration Number', value: SITE.udyam } }
+    : {}),
   areaServed: { '@type': 'Country', name: 'India' },
   knowsAbout: ['dental website design', 'local SEO for dentists', 'Google Business Profile optimisation', 'dental clinic marketing'],
   sameAs: [SITE.parentUrl],
