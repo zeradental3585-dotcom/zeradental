@@ -80,7 +80,8 @@ export default function About() {
           <p>
             Zera Dental (zeradental.in) is a property of{' '}
             <a href={SITE.parentUrl} target="_blank" rel="noopener noreferrer">Zera Technologies</a>, which designs,
-            develops and operates the site. All client work is delivered under the Zera Technologies umbrella, and every
+            develops and operates the site. All client work is contracted with and delivered by Zera Technologies, the
+            registered business behind this website (Udyam Registration Number {SITE.udyam}), and every
             website we build is registered in the client&apos;s own name with full admin access handed over at launch.
           </p>
         </div>
