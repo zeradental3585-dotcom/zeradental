@@ -18,7 +18,13 @@ export const SITE = {
   tagline: 'Dental websites that bring patients through the door.',
   description:
     'Zera Dental builds fast, SEO-first websites for dental clinics in India. Google-ready in 7 days, WhatsApp booking built in, from ₹14,999. Free clinic website audit.',
-  founded: '2024',
+  /**
+   * The Udyam certificate records incorporation and commencement as 05/04/2026 and
+   * registration as 06/04/2026. The site previously claimed "Operating since 2024",
+   * which directly contradicted the document a verification reviewer reads next to
+   * it. Only state dates that match the certificate.
+   */
+  udyamRegisteredOn: '6 April 2026',
   addressLocality: 'Madhepura',
   addressRegion: 'Bihar',
   addressCountry: 'IN',
