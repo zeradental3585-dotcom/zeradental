@@ -29,8 +29,17 @@ export const SITE = {
   addressRegion: 'Bihar',
   addressCountry: 'IN',
   addressCountryName: 'India',
-  /** Printed address used in the public business-identity block. */
-  addressLines: ['Madhepura, Bihar', 'India'],
+  postalCode: '852115',
+  /** streetAddress for schema.org PostalAddress. */
+  streetAddress: '#1, Arar Ghat, Bishunpur Arar, Gwalpara Block',
+  /**
+   * Printed address, matching the official address of the enterprise on the Udyam
+   * certificate field for field, so a verification reviewer can map it 1:1 against
+   * the document. Published at the owner's explicit request.
+   */
+  addressLines: ['#1, Arar Ghat', 'Bishunpur Arar, Gwalpara Block', 'Madhepura, Bihar 852115', 'India'],
+  /** Single-line form for compact places such as the footer. */
+  addressOneLine: '#1, Arar Ghat, Bishunpur Arar, Gwalpara Block, Madhepura, Bihar 852115, India',
   /**
    * Udyam (MSME) registration number. Rendered only when non-empty, so the site
    * never displays a placeholder or an invented number. Fill this in and the
