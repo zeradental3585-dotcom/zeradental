@@ -41,7 +41,8 @@ const ROWS: { label: string; value: React.ReactNode }[] = [
   { label: 'Registered location', value: `${SITE.addressLines.join(', ')}` },
   { label: 'Email', value: <a href={`mailto:${SITE.email}`} className="text-mint-600 underline underline-offset-2">{SITE.email}</a> },
   { label: 'Telephone', value: <a href={`tel:${SITE.phoneE164}`} className="text-mint-600 underline underline-offset-2">{SITE.phoneDisplay}</a> },
-  { label: 'Operating since', value: SITE.founded },
+  { label: 'Date of Udyam registration', value: SITE.udyamRegisteredOn },
+  { label: 'Registered activity', value: 'Web-page designing (NIC 62012); computer consultancy and facilities management (NIC 62020)' },
 ];
 
 const PROPERTIES = [
