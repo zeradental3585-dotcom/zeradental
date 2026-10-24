@@ -30,8 +30,14 @@ export const orgSchema = {
     addressRegion: SITE.addressRegion,
     addressCountry: 'IN',
   },
-  ...(SITE.udyam
-    ? { identifier: { '@type': 'PropertyValue', propertyID: 'Udyam Registration Number', value: SITE.udyam } }
+  ...((SITE.gstin || SITE.udyam)
+    ? {
+        identifier: [
+          ...(SITE.gstin ? [{ '@type': 'PropertyValue', propertyID: 'GSTIN', value: SITE.gstin }] : []),
+          ...(SITE.udyam ? [{ '@type': 'PropertyValue', propertyID: 'Udyam Registration Number', value: SITE.udyam }] : []),
+        ],
+        ...(SITE.gstin ? { taxID: SITE.gstin, vatID: SITE.gstin } : {}),
+      }
     : {}),
   areaServed: { '@type': 'Country', name: 'India' },
   knowsAbout: ['dental website design', 'local SEO for dentists', 'Google Business Profile optimisation', 'dental clinic marketing'],

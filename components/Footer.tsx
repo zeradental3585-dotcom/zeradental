@@ -79,6 +79,12 @@ export default function Footer() {
               <strong className="font-semibold text-ink">{SITE.legalName}</strong>.
               <br />
               {SITE.legalName}, {SITE.addressLines.join(', ')}
+              {SITE.gstin && (
+                <>
+                  <br />
+                  GSTIN: <span className="font-medium text-ink">{SITE.gstin}</span>
+                </>
+              )}
               {SITE.udyam && (
                 <>
                   <br />
