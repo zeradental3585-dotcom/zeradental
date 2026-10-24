@@ -64,6 +64,8 @@ export default function Contact() {
                 <br />
                 {SITE.addressLines.join(', ')}
                 <br />
+                GSTIN: {SITE.gstin}
+                <br />
                 Udyam Registration Number: {SITE.udyam}
               </address>
               <p className="mt-3 text-[13.5px] leading-relaxed text-ink-300">
