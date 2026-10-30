@@ -66,8 +66,8 @@ export const SERVICES: Service[] = [
     slug: 'local-seo-for-dentists',
     title: 'Local SEO for Dentists',
     h1: 'Local SEO that puts your clinic in the Google Map Pack',
-    metaTitle: 'Local SEO for Dentists in India — Rank in the Google Map Pack',
-    metaDesc: 'Local SEO built specifically for Indian dental clinics: Map Pack optimisation, citations, NAP consistency, treatment keyword targeting and review systems. Included from ₹29,999.',
+    metaTitle: 'Google Map Pack for Dentists — Local SEO That Wins the 3 Slots',
+    metaDesc: 'How a dental clinic takes one of the three Google Map Pack slots and keeps it: Business Profile optimisation, citations, NAP consistency and review systems. Included from ₹29,999.',
     intro:
       'Three slots. That is what the Google Maps pack gives your entire locality. Local SEO is the discipline of taking one of them and keeping it.',
     price: 'Included from ₹29,999 · retainer from ₹8,999/mo',

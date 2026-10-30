@@ -66,7 +66,7 @@ export const POSTS_A: Post[] = [
   {
     slug: 'local-seo-for-dentists-india',
     title: 'Local SEO for Dentists in India: The Complete 2026 Guide',
-    metaTitle: 'Local SEO for Dentists in India (2026) — Rank in the Google Map Pack',
+    metaTitle: 'Local SEO for Dentists: A Step-by-Step Guide for Indian Clinics',
     metaDesc: 'A practical local SEO guide for Indian dental clinics: Google Business Profile, Map Pack ranking factors, citations, reviews, treatment pages and realistic timelines by city.',
     excerpt: 'Your city has three Map Pack slots and they decide most of your phone calls. Here is exactly how to take one, in the order that matters.',
     category: 'SEO',
