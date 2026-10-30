@@ -5,6 +5,13 @@ import { WA } from '@/lib/site';
 import { CheckList, CTABand, FAQ } from '@/components/Sections';
 import { WhatsAppIcon, Arrow } from '@/components/Icons';
 import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/JsonLd';
+import { CITIES } from '@/lib/cities';
+
+/** Ordered by actual organic clicks in Search Console, strongest performers first. */
+const CITY_ORDER = ['chennai', 'surat', 'chandigarh', 'bangalore', 'jaipur', 'delhi', 'lucknow', 'mumbai', 'hyderabad', 'pune'];
+const PRICING_CITIES = CITY_ORDER
+  .map((slug) => CITIES.find((c) => c.slug === slug))
+  .filter((c): c is (typeof CITIES)[number] => Boolean(c));
 
 export const metadata: Metadata = {
   title: { absolute: 'Dental Website Cost in India 2026 — ₹14,999 to ₹49,999' },
@@ -145,6 +152,33 @@ export default function Pricing() {
           <a href="https://pms.zeradental.in" target="_blank" rel="noopener noreferrer" className="btn-dark shrink-0">
             See Zera PMS <Arrow className="h-4 w-4" />
           </a>
+        </div>
+      </section>
+
+      {/* CITY PAGES — internal links from a page-1 URL to the city pages that
+          already earn most of our organic clicks but sit on pages 3-6. Order is
+          by real GSC click performance, strongest first. */}
+      <section className="wrap my-20">
+        <div className="mx-auto max-w-3xl">
+          <span className="eyebrow">Where we work</span>
+          <h2 className="h2 mt-2">Pricing is the same in every city we serve</h2>
+          <p className="lede mt-4">
+            We build and run clinic websites across India from the same packages above. Pick your city to see what the
+            search competition actually looks like there before you decide.
+          </p>
+          <ul className="mt-7 flex flex-wrap gap-2.5">
+            {PRICING_CITIES.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/dental-website-design/${c.slug}`}
+                  className="inline-block rounded-full border border-ink/[.12] bg-white px-4 py-2 text-[14.5px] font-medium text-ink-500 transition-colors hover:border-mint-300 hover:text-mint-700"
+                >
+                  Dental website design in {c.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/locations" className="btn-ghost mt-7">All 20 cities <Arrow className="h-4 w-4" /></Link>
         </div>
       </section>
 
