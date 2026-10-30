@@ -71,20 +71,20 @@ export default function Portfolio() {
       <section className="wrap my-20">
         <div className="mx-auto max-w-3xl rounded-3xl border border-ink/[.08] bg-sand-50 p-8 sm:p-12">
           <span className="eyebrow">Being straight with you</span>
-          <h2 className="h2 mt-2">No dental case studies yet</h2>
+          <h2 className="h2 mt-2">Our first dental clinic site is live</h2>
           <p className="lede mt-5">
-            We are early in dentistry. Rather than dress that up, here is the honest version: the sites above are ours,
-            they are live, and they rank on organic search with no ad spend behind them. That is the skill we are
-            bringing to your clinic.
+            An implant-focused clinic in South Delhi came to us through this website, and their site has been live and
+            taking enquiries since. They also run their patient recalls on our clinic software. We are writing it up
+            properly as a case study and will publish it here once they have approved every word.
           </p>
           <p className="lede mt-4">
-            What we can show you instead is a demo clinic site built to the exact standard yours would be — real
-            structure, real treatment pages, real speed — plus a written plan for your city before you pay anything.
-            Ask on WhatsApp and we will send both.
+            Until then, the sites above are ours — live, and ranked on organic search with no ad spend behind them.
+            That is the same skill we bring to a clinic. We can also show you a demo clinic site built to the exact
+            standard yours would be, plus a written plan for your city, before you pay anything.
           </p>
           <p className="mt-5 text-[14px] leading-relaxed text-ink-300">
-            When clinics do come on board, we publish them as case studies only with written permission, and never next
-            to a direct competitor in the same city.
+            We publish clients as case studies only with written permission, and never next to a direct competitor in
+            the same city. That is why the clinic above is unnamed for now.
           </p>
           <Link href="/contact" className="btn-dark mt-7">Ask for the demo and a plan <Arrow className="h-4 w-4" /></Link>
         </div>
