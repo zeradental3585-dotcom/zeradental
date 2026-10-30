@@ -74,8 +74,8 @@ export default function Portfolio() {
           <h2 className="h2 mt-2">Our first dental clinic site is live</h2>
           <p className="lede mt-5">
             An implant-focused clinic in South Delhi came to us through this website, and their site has been live and
-            taking enquiries since. They also run their patient recalls on our clinic software. We are writing it up
-            properly as a case study and will publish it here once they have approved every word.
+            taking enquiries since. We are writing it up properly as a case study and will publish it here once they
+            have approved every word.
           </p>
           <p className="lede mt-4">
             Until then, the sites above are ours — live, and ranked on organic search with no ad spend behind them.
