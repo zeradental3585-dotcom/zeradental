@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { track } from '@/lib/track';
 import { SITE, wa } from '@/lib/site';
 import { WhatsAppIcon, Check, Arrow } from './Icons';
 
@@ -96,6 +97,7 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
     if (r.ok && r.url) {
       logLead(`Made a website preview: ${r.url}${f.maps.trim() ? ` | Maps: ${f.maps.trim()}` : ''}`);
       setDone({ url: r.url, clinic: f.clinic.trim() });
+      track('generate_lead', { lead_source: 'website-preview', page_path: window.location.pathname });
       return;
     }
     logLead(`Tried the website preview builder but it failed (${r.error ?? 'error'}). Make one by hand.${f.maps.trim() ? ` Maps: ${f.maps.trim()}` : ''}`);

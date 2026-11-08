@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { track } from '@/lib/track';
 import Link from 'next/link';
 import { Check, WhatsAppIcon, Arrow } from './Icons';
 import { verdict, type AuditResponse, type AuditSuccess } from '@/lib/audit';
@@ -69,6 +70,7 @@ function FixPlan({ result }: { result: AuditSuccess }) {
       const json = await res.json().catch(() => ({ ok: false, error: 'Unexpected response.' }));
       if (!res.ok || !json.ok) { setErr(json.error || 'Something went wrong.'); setState('error'); return; }
       setState('done');
+      track('generate_lead', { lead_source: 'instant-audit', page_path: window.location.pathname });
     } catch {
       setErr('Network problem. Please message us on WhatsApp instead.');
       setState('error');

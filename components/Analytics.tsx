@@ -21,6 +21,16 @@ export default function Analytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GA_ID}', { anonymize_ip: true });
+          // Contact-intent clicks (WhatsApp / phone / email) reported as GA4 events.
+          document.addEventListener('click', function (e) {
+            var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a) return;
+            var h = a.getAttribute('href') || '';
+            var name = /wa\\.me|api\\.whatsapp\\.com|whatsapp:\\/\\//i.test(h) ? 'whatsapp_click'
+              : /^tel:/i.test(h) ? 'phone_click'
+              : /^mailto:/i.test(h) ? 'email_click' : '';
+            if (name) gtag('event', name, { link_url: h.split('?')[0], page_path: location.pathname });
+          }, true);
         `}
       </Script>
     </>

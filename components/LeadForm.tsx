@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { track } from '@/lib/track';
 import { LEAD_ENDPOINT, WA } from '@/lib/site';
 import { WhatsAppIcon, Check } from './Icons';
 
@@ -41,6 +42,7 @@ export default function LeadForm({ source, compact, heading, sub, cta = 'Get my 
         body: JSON.stringify(payload),
       });
       setState('done');
+      track('generate_lead', { lead_source: source, page_path: window.location.pathname });
       const msg = `Hi Zera Dental, I just submitted the form on your website.%0A%0AName: ${form.name}%0AClinic: ${form.clinic || '-'}%0ACity: ${form.city || '-'}%0AI'd like to discuss my clinic website.`;
       setTimeout(() => window.open(`https://wa.me/919835102324?text=${msg}`, '_blank'), 600);
     } catch {
