@@ -43,6 +43,11 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-mint-600">About us</Link></li>
               <li><Link href="/portfolio" className="hover:text-mint-600">Our work</Link></li>
               <li><Link href="/blog" className="hover:text-mint-600">Growth guides</Link></li>
+              <li>
+                <Link href="/research/indian-dental-website-study" className="hover:text-mint-600">
+                  Research: 21 clinic websites
+                </Link>
+              </li>
               <li><Link href="/free-website-preview" className="hover:text-mint-600">Free website preview</Link></li>
               <li><Link href="/free-website-audit" className="hover:text-mint-600">Free clinic audit</Link></li>
               <li><Link href="/contact" className="hover:text-mint-600">Contact</Link></li>
