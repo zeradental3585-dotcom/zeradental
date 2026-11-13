@@ -69,7 +69,7 @@ export default function Home() {
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-ink-500">
               {['Free preview in 60 seconds', 'Domain + hosting included', 'You own everything'].map((x) => (
                 <span key={x} className="flex items-center gap-1.5">
-                  <Check className="h-3.5 w-3.5 text-mint-500" /> {x}
+                  <Check className="h-3.5 w-3.5 text-mint-700" /> {x}
                 </span>
               ))}
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
                       <span className="rounded-full bg-mint-100 px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-wide text-mint-700">#1</span>
                     </div>
                     <div className="mt-2.5 flex gap-1.5">
-                      <span className="flex-1 rounded-md bg-mint-500 py-1.5 text-center text-[10px] font-semibold text-white">Book now</span>
+                      <span className="flex-1 rounded-md bg-mint-700 py-1.5 text-center text-[10px] font-semibold text-white">Book now</span>
                       <span className="flex-1 rounded-md border border-ink/12 py-1.5 text-center text-[10px] font-semibold text-ink-500">Directions</span>
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export default function Home() {
             ].map((c) => (
               <div key={c.t} className="rounded-2xl border border-red-100 bg-red-50/50 p-5">
                 <div className="flex items-center gap-2">
-                  <span className="grid h-5 w-5 place-items-center rounded-full bg-red-100 text-[11px] font-bold text-red-600">✕</span>
+                  <span className="grid h-5 w-5 place-items-center rounded-full bg-red-100 text-[11px] font-bold text-red-700">✕</span>
                   <h3 className="text-[15px] font-bold text-ink">{c.t}</h3>
                 </div>
                 <p className="mt-2 text-[14px] leading-relaxed text-ink-500">{c.d}</p>
@@ -225,7 +225,7 @@ export default function Home() {
           {PLANS.map((p) => (
             <div key={p.slug} className={`relative flex flex-col rounded-2xl border p-6 ${p.popular ? 'border-mint-500 bg-white shadow-lift ring-1 ring-mint-500' : 'border-ink/[.08] bg-white shadow-soft'}`}>
               {p.popular && (
-                <span className="absolute -top-3 left-6 rounded-full bg-mint-500 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
+                <span className="absolute -top-3 left-6 rounded-full bg-mint-700 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
                   Most chosen
                 </span>
               )}

@@ -5,8 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: { DEFAULT: '#0B1F33', 700: '#12314d', 500: '#3d5a75', 300: '#7d93a8' },
-        mint: { 50: '#eefbf7', 100: '#d3f5ec', 200: '#a7ebda', 400: '#38c9a6', 500: '#12b48d', 600: '#0d9273', 700: '#0b7359' },
+        ink: { DEFAULT: '#0B1F33', 700: '#12314d', 500: '#3d5a75', 300: '#4e6c89' },
+        mint: { 50: '#eefbf7', 100: '#d3f5ec', 200: '#a7ebda', 400: '#38c9a6', 500: '#12b48d', 600: '#0d9273', 700: '#0b7359', 800: '#095b45' },
         sand: { 50: '#fbfaf7', 100: '#f4f1ea' },
       },
       fontFamily: {

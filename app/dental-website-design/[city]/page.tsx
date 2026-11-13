@@ -94,7 +94,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-ink-500">
                 {[`Serving all of ${c.name}`, c.language, 'Live in 7 days'].map((x) => (
-                  <span key={x} className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-mint-500" /> {x}</span>
+                  <span key={x} className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-mint-700" /> {x}</span>
                 ))}
               </div>
             </div>

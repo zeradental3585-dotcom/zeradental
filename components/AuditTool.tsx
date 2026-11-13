@@ -21,7 +21,7 @@ const Cross = ({ className = '' }: { className?: string }) => (
 
 function ScoreRing({ score }: { score: number }) {
   const r = 52, c = 2 * Math.PI * r;
-  const tone = score >= 85 ? 'text-mint-500' : score >= 65 ? 'text-mint-600' : score >= 40 ? 'text-amber-500' : 'text-rose-500';
+  const tone = score >= 85 ? 'text-mint-700' : score >= 65 ? 'text-mint-600' : score >= 40 ? 'text-amber-500' : 'text-rose-500';
   return (
     <div className="relative h-[136px] w-[136px] shrink-0">
       <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90">

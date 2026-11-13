@@ -95,7 +95,7 @@ export default function AuditPage() {
 
           <div className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-ink-500">
             {['No login or password needed', 'No email required to see your score', 'Your data is never sold'].map((x) => (
-              <span key={x} className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-mint-500" /> {x}</span>
+              <span key={x} className="flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-mint-700" /> {x}</span>
             ))}
           </div>
         </div>

@@ -118,7 +118,7 @@ export default function DentalSeoPage() {
           {SEO_PLANS.map((p) => (
             <div key={p.slug} className={`relative flex flex-col rounded-3xl border p-7 ${p.popular ? 'border-mint-500 shadow-lift ring-1 ring-mint-500' : 'border-ink/[.08] shadow-soft'}`}>
               {p.popular && (
-                <span className="absolute -top-3 left-7 rounded-full bg-mint-500 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">Most chosen</span>
+                <span className="absolute -top-3 left-7 rounded-full bg-mint-700 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">Most chosen</span>
               )}
               <h3 className="text-[15px] font-bold uppercase tracking-wide text-ink-500">{p.name}</h3>
               <div className="mt-3 flex items-end gap-1.5">

@@ -37,7 +37,7 @@ export default function Header() {
             <Tooth className="h-5 w-5" />
           </span>
           <span className="text-[17px] font-extrabold tracking-tight">
-            Zera<span className="text-mint-500">Dental</span>
+            Zera<span className="text-mint-700">Dental</span>
           </span>
         </Link>
 

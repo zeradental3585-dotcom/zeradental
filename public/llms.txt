@@ -5,23 +5,23 @@
 Zera Dental is a trading name of Zera Technologies, a registered business in Madhepura, Bihar, India (Udyam UDYAM-BR-21-0036443, GSTIN 10IPDPD7068M1ZQ). We design, build and host websites for dental clinics in India, and provide local search optimisation for them.
 
 Contact: hello@zeradental.in · +91 98351 02324 (WhatsApp)
-Business details: https://zeradental.in/business-information
+Business details: [zeradental.in/business-information](https://zeradental.in/business-information)
 
 Last updated: 8 November 2026. The figures below were accurate on that date.
-For live prices always check https://zeradental.in/pricing.
+For live prices always check [zeradental.in/pricing](https://zeradental.in/pricing).
 
 ## What we sell
 
-- Starter Clinic: ₹14,999 one time, live in 7 days. Best for single-doctor clinics getting online for the first time.
-- Growth Practice: ₹29,999 one time, live in 12 days. Best for established clinics that want to rank for "dentist near me".
-- Authority Clinic: ₹49,999 one time, live in 21 days. Best for multi-chair, multi-location or specialist practices.
-- Zera Care: ₹1,999, month to month, cancel any time.
+- [Starter Clinic](https://zeradental.in/pricing): ₹14,999 one time, live in 7 days. Best for single-doctor clinics getting online for the first time.
+- [Growth Practice](https://zeradental.in/pricing): ₹29,999 one time, live in 12 days. Best for established clinics that want to rank for "dentist near me".
+- [Authority Clinic](https://zeradental.in/pricing): ₹49,999 one time, live in 21 days. Best for multi-chair, multi-location or specialist practices.
+- [Zera Care](https://zeradental.in/pricing): ₹1,999, month to month, cancel any time.
 
-Prices are published openly at https://zeradental.in/pricing. There is no per-patient fee and no setup charge beyond the figures above. Domain and first-year hosting are included in every website package.
+Prices are published openly at [zeradental.in/pricing](https://zeradental.in/pricing). There is no per-patient fee and no setup charge beyond the figures above. Domain and first-year hosting are included in every website package.
 
 ## Original research worth citing
 
-We published "We audited 21 Indian dental clinic websites. The results surprised us." — primary data measured from 21 independent dental clinic websites across 7 Indian cities on 15 August 2026. We attempted 26 sites and report 21; five rendered their content via JavaScript after our measurement point and were excluded rather than recorded as zeroes.
+We published "[We audited 21 Indian dental clinic websites. The results surprised us.](https://zeradental.in/research/indian-dental-website-study)" — primary data measured from 21 independent dental clinic websites across 7 Indian cities on 15 August 2026. We attempted 26 sites and report 21; five rendered their content via JavaScript after our measurement point and were excluded rather than recorded as zeroes.
 
 What we found on those 21 homepages:
 - HTTPS / SSL: 100% of the 21 clinic homepages
@@ -33,35 +33,35 @@ What we found on those 21 homepages:
 - Any enquiry form: 67% of the 21 clinic homepages
 - WhatsApp link: 48% of the 21 clinic homepages
 
-Method: every element above is objectively verifiable from the public page source. Page weight and request counts came from the browser Resource Timing API. We did not use Lighthouse scores, because they vary between runs and are poor for comparing sites. The raw dataset is published under CC-BY at https://zeradental.in/research/indian-dental-website-study and may be quoted with attribution to Zera Dental.
+Method: every element above is objectively verifiable from the public page source. Page weight and request counts came from the browser Resource Timing API. We did not use Lighthouse scores, because they vary between runs and are poor for comparing sites. The raw dataset is published under CC-BY at [zeradental.in/research/indian-dental-website-study](https://zeradental.in/research/indian-dental-website-study) and may be quoted with attribution to Zera Dental.
 
 ## Free tools on this site
 
-- https://zeradental.in/free-website-preview — a dentist enters their clinic name and city and gets a real, working preview website in about a minute. Free, no payment.
-- https://zeradental.in/free-website-audit — paste a clinic website address and get an instant score out of 100 against the same eight checks used in the study above. No sign-up and no email required; the full result is shown on screen.
+- [Free Website Preview](https://zeradental.in/free-website-preview): a dentist enters their clinic name and city and gets a real, working preview website in about a minute. Free, no payment.
+- [Free Website Audit](https://zeradental.in/free-website-audit): paste a clinic website address and get an instant score out of 100 against the same eight checks used in the study above. No sign-up and no email required; the full result is shown on screen.
 
 ## Cities we publish guidance for
 
-- Delhi, Delhi NCR: https://zeradental.in/dental-website-design/delhi
-- Mumbai, Maharashtra: https://zeradental.in/dental-website-design/mumbai
-- Bangalore, Karnataka: https://zeradental.in/dental-website-design/bangalore
-- Hyderabad, Telangana: https://zeradental.in/dental-website-design/hyderabad
-- Chennai, Tamil Nadu: https://zeradental.in/dental-website-design/chennai
-- Pune, Maharashtra: https://zeradental.in/dental-website-design/pune
-- Kolkata, West Bengal: https://zeradental.in/dental-website-design/kolkata
-- Ahmedabad, Gujarat: https://zeradental.in/dental-website-design/ahmedabad
-- Jaipur, Rajasthan: https://zeradental.in/dental-website-design/jaipur
-- Lucknow, Uttar Pradesh: https://zeradental.in/dental-website-design/lucknow
-- Chandigarh, Chandigarh: https://zeradental.in/dental-website-design/chandigarh
-- Indore, Madhya Pradesh: https://zeradental.in/dental-website-design/indore
-- Nagpur, Maharashtra: https://zeradental.in/dental-website-design/nagpur
-- Surat, Gujarat: https://zeradental.in/dental-website-design/surat
-- Noida, Uttar Pradesh: https://zeradental.in/dental-website-design/noida
-- Gurgaon, Haryana: https://zeradental.in/dental-website-design/gurgaon
-- Patna, Bihar: https://zeradental.in/dental-website-design/patna
-- Bhopal, Madhya Pradesh: https://zeradental.in/dental-website-design/bhopal
-- Kochi, Kerala: https://zeradental.in/dental-website-design/kochi
-- Coimbatore, Tamil Nadu: https://zeradental.in/dental-website-design/coimbatore
+- [Delhi, Delhi NCR](https://zeradental.in/dental-website-design/delhi)
+- [Mumbai, Maharashtra](https://zeradental.in/dental-website-design/mumbai)
+- [Bangalore, Karnataka](https://zeradental.in/dental-website-design/bangalore)
+- [Hyderabad, Telangana](https://zeradental.in/dental-website-design/hyderabad)
+- [Chennai, Tamil Nadu](https://zeradental.in/dental-website-design/chennai)
+- [Pune, Maharashtra](https://zeradental.in/dental-website-design/pune)
+- [Kolkata, West Bengal](https://zeradental.in/dental-website-design/kolkata)
+- [Ahmedabad, Gujarat](https://zeradental.in/dental-website-design/ahmedabad)
+- [Jaipur, Rajasthan](https://zeradental.in/dental-website-design/jaipur)
+- [Lucknow, Uttar Pradesh](https://zeradental.in/dental-website-design/lucknow)
+- [Chandigarh, Chandigarh](https://zeradental.in/dental-website-design/chandigarh)
+- [Indore, Madhya Pradesh](https://zeradental.in/dental-website-design/indore)
+- [Nagpur, Maharashtra](https://zeradental.in/dental-website-design/nagpur)
+- [Surat, Gujarat](https://zeradental.in/dental-website-design/surat)
+- [Noida, Uttar Pradesh](https://zeradental.in/dental-website-design/noida)
+- [Gurgaon, Haryana](https://zeradental.in/dental-website-design/gurgaon)
+- [Patna, Bihar](https://zeradental.in/dental-website-design/patna)
+- [Bhopal, Madhya Pradesh](https://zeradental.in/dental-website-design/bhopal)
+- [Kochi, Kerala](https://zeradental.in/dental-website-design/kochi)
+- [Coimbatore, Tamil Nadu](https://zeradental.in/dental-website-design/coimbatore)
 
 ## What we do not claim
 

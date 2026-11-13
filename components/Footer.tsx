@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-ink text-mint-200"><Tooth className="h-5 w-5" /></span>
-              <span className="text-[17px] font-extrabold tracking-tight">Zera<span className="text-mint-500">Dental</span></span>
+              <span className="text-[17px] font-extrabold tracking-tight">Zera<span className="text-mint-700">Dental</span></span>
             </div>
             <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-ink-500">
               We build fast, search-optimised websites for dental clinics across India — designed to turn
