@@ -82,7 +82,7 @@ export default function AuditPage() {
             </p>
             <p className="mt-5 text-[14.5px] leading-relaxed text-ink-500">
               No website yet? This tool has nothing to read, so{' '}
-              <Link href="/free-website-preview" className="font-semibold text-mint-600 underline underline-offset-2">
+              <Link href="/free-website-preview" className="font-semibold text-mint-700 underline underline-offset-2">
                 build a free preview of your clinic&apos;s site
               </Link>{' '}
               instead — that is the one you want.
@@ -108,7 +108,7 @@ export default function AuditPage() {
             <h2 className="h2 mt-2">Eight checks, weighted by what actually matters in India</h2>
             <p className="lede mt-4">
               These are the eight measurements from our{' '}
-              <Link href={`/research/${BENCHMARK.studySlug}`} className="font-semibold text-mint-600 underline underline-offset-2">
+              <Link href={`/research/${BENCHMARK.studySlug}`} className="font-semibold text-mint-700 underline underline-offset-2">
                 {BENCHMARK.n}-clinic study
               </Link>
               , which is why your score is comparable to theirs rather than a number we made up. The weight is shown

@@ -237,7 +237,7 @@ export default function AuditTool() {
             <p className="mt-2 text-[14.5px] text-ink-500">
               The same eight checks we ran across {result.benchmark.n} clinic websites in {result.benchmark.cities} cities
               for our{' '}
-              <Link href={`/research/${result.benchmark.studySlug}`} className="font-semibold text-mint-600 underline underline-offset-2">
+              <Link href={`/research/${result.benchmark.studySlug}`} className="font-semibold text-mint-700 underline underline-offset-2">
                 published study
               </Link>
               , so the comparison is like for like.

@@ -193,7 +193,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <div key={p.slug} className={`flex flex-col rounded-2xl border p-6 ${p.popular ? 'border-mint-500 shadow-lift ring-1 ring-mint-500' : 'border-ink/[.08] shadow-soft'}`}>
               <h3 className="text-[14px] font-bold uppercase tracking-wide text-ink-500">{p.name}</h3>
               <div className="mt-2.5 font-display text-[34px] leading-none tracking-[-.02em]">{p.priceLabel}</div>
-              <p className="mt-1 text-[13px] font-semibold text-mint-600">{p.timeline}</p>
+              <p className="mt-1 text-[13px] font-semibold text-mint-700">{p.timeline}</p>
               <p className="mt-3 flex-1 text-[14px] leading-relaxed text-ink-500">{p.best}</p>
               <a href={WA.plan(`${p.name} (${c.name})`)} target="_blank" rel="noopener noreferrer" className={`mt-5 w-full ${p.popular ? 'btn-primary' : 'btn-dark'}`}>
                 <WhatsAppIcon className="h-4 w-4" /> Enquire

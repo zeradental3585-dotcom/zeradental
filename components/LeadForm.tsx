@@ -116,7 +116,7 @@ function Field({
   return (
     <div>
       <label className="block text-[13px] font-semibold text-ink">
-        {label} {required && <span className="text-mint-600">*</span>}
+        {label} {required && <span className="text-mint-700">*</span>}
       </label>
       <input
         {...props}

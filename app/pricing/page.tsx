@@ -72,7 +72,7 @@ export default function Pricing() {
                 <span className="font-display text-[42px] leading-none tracking-[-.02em]">{p.priceLabel}</span>
                 {p.strike && <span className="pb-1.5 text-[15px] text-ink-300 line-through">{p.strike}</span>}
               </div>
-              <p className="mt-1.5 text-[13px] font-semibold text-mint-600">{p.timeline} · one-time payment</p>
+              <p className="mt-1.5 text-[13px] font-semibold text-mint-700">{p.timeline} · one-time payment</p>
               <p className="mt-4 text-[14.5px] leading-relaxed text-ink-500">
                 <span className="font-semibold text-ink">Best for: </span>{p.best}
               </p>

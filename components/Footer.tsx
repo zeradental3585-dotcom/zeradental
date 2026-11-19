@@ -63,7 +63,7 @@ export default function Footer() {
                   <Link href={`/dental-website-design/${c.slug}`} className="hover:text-mint-600">{c.name}</Link>
                 </li>
               ))}
-              <li><Link href="/locations" className="font-medium text-mint-600 hover:text-mint-700">All cities →</Link></li>
+              <li><Link href="/locations" className="font-medium text-mint-700">All cities →</Link></li>
             </ul>
           </nav>
         </div>

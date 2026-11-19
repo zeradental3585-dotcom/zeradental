@@ -137,11 +137,11 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
     <form onSubmit={submit} className="card" noValidate aria-busy={busy}>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="block text-[13px] font-semibold text-ink">
-          Clinic name <span className="text-mint-600">*</span>
+          Clinic name <span className="text-mint-700">*</span>
           <input className={inputCls} value={f.clinic} onChange={set('clinic')} placeholder="Smile Care Dental Clinic" maxLength={80} required />
         </label>
         <label className="block text-[13px] font-semibold text-ink">
-          City <span className="text-mint-600">*</span>
+          City <span className="text-mint-700">*</span>
           <input className={inputCls} value={f.city} onChange={set('city')} placeholder="Patna" maxLength={50} required />
         </label>
         <label className="block text-[13px] font-semibold text-ink">
@@ -149,7 +149,7 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
           <input className={inputCls} value={f.doctor} onChange={set('doctor')} placeholder="Dr. Ananya Sharma" maxLength={60} autoComplete="name" />
         </label>
         <label className="block text-[13px] font-semibold text-ink">
-          WhatsApp number <span className="text-mint-600">*</span>
+          WhatsApp number <span className="text-mint-700">*</span>
           <input className={inputCls} value={f.phone} onChange={set('phone')} placeholder="98765 43210" type="tel" inputMode="numeric" autoComplete="tel" maxLength={16} required />
         </label>
         <label className="block text-[13px] font-semibold text-ink sm:col-span-2">

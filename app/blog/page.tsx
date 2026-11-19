@@ -50,7 +50,7 @@ export default function Blog() {
           </div>
           <h2 className="h2 mt-4 max-w-3xl">{featured.title}</h2>
           <p className="lede mt-4 max-w-2xl">{featured.excerpt}</p>
-          <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-mint-600 group-hover:text-mint-700">
+          <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-mint-700">
             Read the guide <Arrow className="h-4 w-4" />
           </span>
         </Link>
@@ -66,7 +66,7 @@ export default function Blog() {
               </div>
               <h2 className="mt-3.5 text-[17.5px] font-bold leading-snug text-ink">{p.title}</h2>
               <p className="mt-2.5 flex-1 text-[14.5px] leading-relaxed text-ink-500">{p.excerpt}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-mint-600 group-hover:text-mint-700">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-mint-700">
                 Read <Arrow className="h-4 w-4" />
               </span>
             </Link>

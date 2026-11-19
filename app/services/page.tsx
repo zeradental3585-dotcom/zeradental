@@ -53,7 +53,7 @@ export default function Services() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h2 className="h3">{s.title}</h2>
-                  <p className="mt-1 text-[13px] font-semibold text-mint-600">{s.price}</p>
+                  <p className="mt-1 text-[13px] font-semibold text-mint-700">{s.price}</p>
                 </div>
                 <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-ink/12 text-ink-500 transition-all group-hover:border-mint-400 group-hover:bg-mint-50 group-hover:text-mint-600">
                   <Arrow className="h-4 w-4" />

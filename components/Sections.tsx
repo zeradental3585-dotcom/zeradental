@@ -136,7 +136,7 @@ export function CheckList({ items, className = '' }: { items: string[]; classNam
     <ul className={`space-y-2.5 ${className}`}>
       {items.map((i) => (
         <li key={i} className="flex gap-3">
-          <span className="mt-[3px] grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full bg-mint-100 text-mint-600">
+          <span className="mt-[3px] grid h-[18px] w-[18px] shrink-0 place-items-center rounded-full bg-mint-100 text-mint-700">
             <Check className="h-2.5 w-2.5" />
           </span>
           <span className="text-[15px] leading-relaxed text-ink-700/90">{i}</span>

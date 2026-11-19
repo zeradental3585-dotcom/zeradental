@@ -60,7 +60,7 @@ export default function Portfolio() {
                   <li key={s} className="rounded-full bg-sand-50 px-2.5 py-1 text-[12px] font-medium text-ink-500">{s}</li>
                 ))}
               </ul>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-mint-600 group-hover:text-mint-700">
+              <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-mint-700">
                 Visit site <Arrow className="h-4 w-4" />
               </span>
             </a>

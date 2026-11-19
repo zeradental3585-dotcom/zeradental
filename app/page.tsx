@@ -112,7 +112,7 @@ export default function Home() {
                     { n: 'Competitor Dental Care', r: '3.8 · 21 reviews' },
                     { n: 'City Dental Point', r: '4.1 · 12 reviews' },
                   ].map((c) => (
-                    <div key={c.n} className="rounded-xl border border-ink/[.07] bg-white/70 p-3 opacity-60">
+                    <div key={c.n} className="rounded-xl border border-ink/[.07] bg-white/70 p-3">
                       <div className="text-[12px] font-semibold text-ink-500">{c.n}</div>
                       <div className="mt-0.5 text-[10px] text-ink-300">{c.r}</div>
                     </div>
@@ -234,7 +234,7 @@ export default function Home() {
                 <span className="font-display text-[38px] leading-none tracking-[-.02em]">{p.priceLabel}</span>
                 {p.strike && <span className="pb-1 text-[15px] text-ink-300 line-through">{p.strike}</span>}
               </div>
-              <p className="mt-1 text-[13px] font-medium text-mint-600">{p.timeline} · one-time</p>
+              <p className="mt-1 text-[13px] font-medium text-mint-700">{p.timeline} · one-time</p>
               <p className="mt-3 text-[14px] leading-relaxed text-ink-500">{p.best}</p>
               <div className="mt-5 flex-1">
                 <CheckList items={p.features.slice(0, 6)} />

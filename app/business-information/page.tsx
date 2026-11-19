@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const ROWS: { label: string; value: React.ReactNode }[] = [
   { label: 'Legal business name', value: <strong className="font-semibold text-ink">{SITE.legalName}</strong> },
   { label: 'Trading name', value: `${SITE.name}` },
-  { label: 'Website operated', value: <a href={SITE.url} className="text-mint-600 underline underline-offset-2">{SITE.domain}</a> },
+  { label: 'Website operated', value: <a href={SITE.url} className="text-mint-700 underline underline-offset-2">{SITE.domain}</a> },
   { label: 'Business type', value: 'Web design and development studio' },
   { label: 'GSTIN', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.gstin}</span> },
   { label: 'Udyam Registration Number', value: <span className="font-mono text-[14.5px] font-semibold text-ink">{SITE.udyam}</span> },
@@ -45,8 +45,8 @@ const ROWS: { label: string; value: React.ReactNode }[] = [
       <span className="block whitespace-pre-line">{SITE.addressLines.join('\n')}</span>
     ),
   },
-  { label: 'Email', value: <a href={`mailto:${SITE.email}`} className="text-mint-600 underline underline-offset-2">{SITE.email}</a> },
-  { label: 'Telephone', value: <a href={`tel:${SITE.phoneE164}`} className="text-mint-600 underline underline-offset-2">{SITE.phoneDisplay}</a> },
+  { label: 'Email', value: <a href={`mailto:${SITE.email}`} className="text-mint-700 underline underline-offset-2">{SITE.email}</a> },
+  { label: 'Telephone', value: <a href={`tel:${SITE.phoneE164}`} className="text-mint-700 underline underline-offset-2">{SITE.phoneDisplay}</a> },
   { label: 'Date of Udyam registration', value: SITE.udyamRegisteredOn },
   { label: 'Registered activity', value: 'Web-page designing (NIC 62012); computer consultancy and facilities management (NIC 62020)' },
 ];
@@ -116,7 +116,7 @@ export default function BusinessInformationPage() {
             {SITE.legalName} builds and operates websites. Under the {SITE.name} brand we design, build and host
             websites for dental clinics across India, and provide local search optimisation for them. Work is
             quoted up front as a one-time fee, with optional ongoing care. Our prices are published openly on our{' '}
-            <Link href="/pricing" className="font-semibold text-mint-600 underline underline-offset-2">pricing page</Link>.
+            <Link href="/pricing" className="font-semibold text-mint-700 underline underline-offset-2">pricing page</Link>.
           </p>
         </div>
       </section>
@@ -141,7 +141,7 @@ export default function BusinessInformationPage() {
           </ul>
           <p className="mt-6 text-[14.5px] leading-relaxed text-ink-500">
             The parent brand site is{' '}
-            <a href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-mint-600 underline underline-offset-2">
+            <a href={SITE.parentUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-mint-700 underline underline-offset-2">
               zeratech.io
             </a>
             .
@@ -160,10 +160,10 @@ export default function BusinessInformationPage() {
               <span key={l}>{l}<br /></span>
             ))}
             <br />
-            Email: <a href={`mailto:${SITE.email}`} className="text-mint-600 underline underline-offset-2">{SITE.email}</a>
+            Email: <a href={`mailto:${SITE.email}`} className="text-mint-700 underline underline-offset-2">{SITE.email}</a>
             <br />
             Telephone and WhatsApp:{' '}
-            <a href={`tel:${SITE.phoneE164}`} className="text-mint-600 underline underline-offset-2">{SITE.phoneDisplay}</a>
+            <a href={`tel:${SITE.phoneE164}`} className="text-mint-700 underline underline-offset-2">{SITE.phoneDisplay}</a>
           </address>
           <p className="mt-5 text-[14.5px] leading-relaxed text-ink-300">
             We reply on WhatsApp and email. We do not operate a call centre and we do not make unsolicited sales

@@ -104,7 +104,7 @@ export default function StudyPage() {
                 <div key={m.label}>
                   <div className="flex items-baseline justify-between gap-4">
                     <span className="text-[15px] font-semibold text-ink">{m.label}</span>
-                    <span className={`text-[15px] font-bold ${m.good ? 'text-mint-600' : 'text-orange-600'}`}>{m.pct}%</span>
+                    <span className={`text-[15px] font-bold ${m.good ? 'text-mint-700' : 'text-orange-600'}`}>{m.pct}%</span>
                   </div>
                   <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-sand-100">
                     <div className={`h-full rounded-full ${m.good ? 'bg-mint-500' : 'bg-orange-400'}`} style={{ width: `${m.pct}%` }} />
@@ -216,7 +216,7 @@ export default function StudyPage() {
                       <td className="py-3 pr-4 text-right">{c.tp}</td>
                       <td className="py-3 pr-4 text-right">{c.words.toLocaleString()}</td>
                       <td className="py-3">
-                        <span className={c.wa ? 'font-semibold text-mint-600' : 'font-semibold text-orange-600'}>
+                        <span className={c.wa ? 'font-semibold text-mint-700' : 'font-semibold text-orange-600'}>
                           {c.wa ? 'Yes' : 'No'}
                         </span>
                       </td>
