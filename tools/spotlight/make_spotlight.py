@@ -168,9 +168,19 @@ def build(lead):
 {f'<cite>— {E(quote_from)}</cite>' if quote_from else ''}</section>'''
 
     ig_link = f'https://www.instagram.com/{E(handle)}/' if handle else ""
-    share_text = f"I was featured by Zera Dental! Check it out: {url}"
-    wa_share = f"https://wa.me/?text={html.escape(share_text, quote=True).replace(chr(32),'%20')}"
     meta_desc = f"{tagline} — {name}{', ' + clinic if clinic else ''}{', ' + place if place else ''}. Featured by Zera Dental."
+
+    # Share links — used both by the plain <a> fallback icons (work with JS off) and
+    # by the native share button's data attributes (used when the Web Share API is
+    # available, which covers one-tap sharing to literally any app on a phone,
+    # including Instagram DM/Story, not just WhatsApp).
+    share_text = f"I was featured by Zera Dental! {tagline}"
+    share_text_full = f"{share_text} {url}"
+    def _enc(s):
+        return html.escape(s, quote=True).replace(chr(32), '%20')
+    wa_share = f"https://wa.me/?text={_enc(share_text_full)}"
+    tw_share = f"https://twitter.com/intent/tweet?text={_enc(share_text)}&url={_enc(url)}"
+    fb_share = f"https://www.facebook.com/sharer/sharer.php?u={_enc(url)}"
 
     page = f"""<!doctype html>
 <html lang="en-IN">
@@ -326,7 +336,20 @@ def build(lead):
   .cta p {{ color:var(--ink-500); margin:0 0 22px; font-size:15px; max-width:480px; margin-left:auto; margin-right:auto; }}
   .btn {{ display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff !important; font-weight:700; font-size:15px; padding:13px 26px; border-radius:12px; text-decoration:none; }}
   .btn.secondary {{ background:#fff; color:var(--ink) !important; border:1px solid rgba(11,31,51,.15); margin-left:10px; }}
-  .share-row {{ text-align:center; padding:8px 0 44px; }}
+  .eyebrow-center {{ justify-content:center; }}
+  .eyebrow-center::before {{ display:none; }}
+  .share-section {{ text-align:center; padding:12px 0 48px; }}
+  .share-section h2 {{ font-size:23px; font-weight:600; margin:6px 0 8px; }}
+  .share-sub {{ color:var(--ink-500); font-size:14.5px; margin:0 0 26px; }}
+  .btn-share {{ font-size:15.5px; padding:14px 30px; gap:10px; }}
+  .share-icons {{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:18px; }}
+  .share-icon {{
+    display:grid; place-items:center; width:46px; height:46px; border-radius:50%;
+    background:#fff; border:1px solid rgba(11,31,51,.12); color:var(--ink-500); cursor:pointer;
+    transition:transform .15s ease, color .15s ease, border-color .15s ease; text-decoration:none;
+  }}
+  .share-icon:hover {{ transform:translateY(-2px); color:var(--mint-700); border-color:var(--mint-400); }}
+  .copy-feedback {{ height:18px; margin:12px 0 0; font-size:13px; font-weight:700; color:var(--mint-700); }}
 
   footer {{ background:var(--ink); color:rgba(255,255,255,.75); padding:34px 0; font-size:13px; }}
   footer .wrap {{ display:flex; flex-direction:column; gap:10px; align-items:center; text-align:center; }}
@@ -371,9 +394,30 @@ def build(lead):
 </div>
 </div>
 
-<div class="share-row">
-  <a class="btn" href="{wa_share}" target="_blank" rel="noopener noreferrer">Share this feature on WhatsApp</a>
-</div>
+<section class="share-section"><div class="wrap">
+  <p class="eyebrow eyebrow-center">Spread the word</p>
+  <h2>Proud of this feature? Share it in one tap ✨</h2>
+  <p class="share-sub">The more this gets shared, the more it helps {E(name.split(" ")[-1] if " " in name else name)} — and anyone else who sees it.</p>
+  <button type="button" id="nativeShareBtn" class="btn btn-share" data-url="{E(url)}" data-title="{E(name)} — {E(tagline)}" data-text="{E(share_text)}">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Share This Feature
+  </button>
+  <div class="share-icons">
+    <a class="share-icon" href="{wa_share}" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.5 1.33 5.02L2 22l5.12-1.34A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10Zm0 18.2c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.03.8.81-2.95-.21-.31A8.17 8.17 0 0 1 3.84 12c0-4.53 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.67 8.2-8.2 8.2Zm4.5-6.14c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+    </a>
+    <a class="share-icon" href="{tw_share}" target="_blank" rel="noopener noreferrer" aria-label="Share on X / Twitter" title="Share on X">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M18.9 2H22l-7.6 8.68L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2Zm-1.2 18h1.9L7.4 4H5.3l12.4 16Z"/></svg>
+    </a>
+    <a class="share-icon" href="{fb_share}" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 22v-8.5h2.9l.4-3.4h-3.3V8c0-1 .3-1.6 1.7-1.6h1.7V3.3C16.4 3.2 15.3 3 14 3c-2.7 0-4.5 1.6-4.5 4.6v2.5H6.6v3.4h2.9V22h4Z"/></svg>
+    </a>
+    <button type="button" class="share-icon" id="copyLinkBtn" data-url="{E(url)}" aria-label="Copy link" title="Copy link">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+  <p class="copy-feedback" id="copyFeedback" aria-live="polite"></p>
+</div></section>
 
 <p class="editorial-note">This is an independent editorial feature by the Zera Dental team — not a paid advertisement, and not {E(name)}'s official website.</p>
 
@@ -384,6 +428,52 @@ def build(lead):
 </div></footer>
 
 <script async src="//www.instagram.com/embed.js"></script>
+<script>
+(function () {{
+  var nativeBtn = document.getElementById('nativeShareBtn');
+  if (nativeBtn) {{
+    if (navigator.share) {{
+      nativeBtn.addEventListener('click', function () {{
+        navigator.share({{
+          title: nativeBtn.getAttribute('data-title'),
+          text: nativeBtn.getAttribute('data-text'),
+          url: nativeBtn.getAttribute('data-url')
+        }}).catch(function () {{ /* user cancelled — fine */ }});
+      }});
+    }} else {{
+      nativeBtn.style.display = 'none';
+    }}
+  }}
+  var copyBtn = document.getElementById('copyLinkBtn');
+  var feedback = document.getElementById('copyFeedback');
+  function showCopied() {{
+    if (!feedback) return;
+    feedback.textContent = 'Link copied!';
+    setTimeout(function () {{ feedback.textContent = ''; }}, 2000);
+  }}
+  function fallbackCopy(text) {{
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {{ document.execCommand('copy'); }} catch (e) {{}}
+    document.body.removeChild(ta);
+    showCopied();
+  }}
+  if (copyBtn) {{
+    copyBtn.addEventListener('click', function () {{
+      var url = copyBtn.getAttribute('data-url');
+      if (navigator.clipboard && navigator.clipboard.writeText) {{
+        navigator.clipboard.writeText(url).then(showCopied).catch(function () {{ fallbackCopy(url); }});
+      }} else {{
+        fallbackCopy(url);
+      }}
+    }});
+  }}
+}})();
+</script>
 </body>
 </html>"""
     return slug, url, og_image, page
