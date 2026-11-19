@@ -65,6 +65,7 @@ Rules baked in (do not remove):
   * No noindex — these pages are meant to be found and shared.
 """
 import html, json, re, sys, pathlib, datetime
+from urllib.parse import quote as _urlquote
 
 def find_repo_root():
     p = pathlib.Path(__file__).resolve()
@@ -137,7 +138,7 @@ def build(lead):
     issue_no = lead.get("issue_no", "001")
     slug = lead.get("slug") or slugify(f"{name}-{city}")
     url = f"{SITE_URL}/spotlight/{slug}.html"
-    og_image = f"{SITE_URL}/spotlight/{slug}-og.png"
+    og_image = f"{SITE_URL}/spotlight/{slug}-og.jpg"
     today = datetime.date.today()
     mono = initials(name)
 
@@ -174,10 +175,17 @@ def build(lead):
     # by the native share button's data attributes (used when the Web Share API is
     # available, which covers one-tap sharing to literally any app on a phone,
     # including Instagram DM/Story, not just WhatsApp).
+    # NOTE: these MUST be proper percent-encoding (urllib.parse.quote), not html.escape —
+    # html.escape leaves punctuation like apostrophes, commas, colons, "&" and non-ASCII
+    # em-dashes untouched, which produces a malformed query string once embedded in a raw
+    # <a href>. Desktop Chrome silently auto-corrects a sloppy href like that when you type
+    # it into the address bar, which masked this bug in manual testing — but a plain anchor
+    # click, and especially mobile/in-app WebViews (WhatsApp's own browser, Instagram, etc.),
+    # do NOT get that same auto-correction and can fail to open or mangle the shared text.
     share_text = f"I was featured by Zera Dental! {tagline}"
     share_text_full = f"{share_text} {url}"
     def _enc(s):
-        return html.escape(s, quote=True).replace(chr(32), '%20')
+        return _urlquote(s, safe="")
     wa_share = f"https://wa.me/?text={_enc(share_text_full)}"
     tw_share = f"https://twitter.com/intent/tweet?text={_enc(share_text)}&url={_enc(url)}"
     fb_share = f"https://www.facebook.com/sharer/sharer.php?u={_enc(url)}"
@@ -283,9 +291,17 @@ def build(lead):
   .ig-section-head {{ text-align:center; padding:44px 0 6px; }}
   .ig-section-head .eyebrow {{ justify-content:center; }}
   .ig-section-head h2 {{ font-size:21px; font-weight:600; margin:4px 0 0; }}
-  .ig-card-featured {{ margin-bottom:22px; }}
-  .ig-grid {{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,300px)); gap:18px; padding:0 0 44px; justify-content:center; }}
-  .ig-card {{ display:flex; justify-content:center; }}
+  /* .ig-layout holds the featured post + the rest-grid side by side on wide screens
+     (wraps to stacked on narrow ones). Instagram's embed.js sizes its iframe to match
+     the *measured* width of its container at process-time, so capping that container's
+     max-width here (not just the grid track width) is what actually stops the embed
+     from rendering oversized on desktop — relying on grid-track sizing alone let the
+     iframe overflow past its track since grid items don't shrink below their content's
+     intrinsic width by default. */
+  .ig-layout {{ display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:22px; padding:0 0 44px; }}
+  .ig-card-featured {{ margin-bottom:0; }}
+  .ig-grid {{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,300px)); gap:18px; justify-content:center; }}
+  .ig-card {{ display:flex; justify-content:center; max-width:380px; width:100%; min-width:0; overflow:hidden; margin:0 auto; }}
   .ig-fallback {{
     width:100%; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:10px; padding:26px 18px; border-radius:18px; text-decoration:none; color:var(--ink);
@@ -380,7 +396,7 @@ def build(lead):
 </div></section>
 
 {f'''<div class="ig-section-head wrap"><p class="eyebrow">As seen on Instagram</p><h2>Straight from @{E(handle)}</h2></div>
-<section class="wrap">{featured_html}<div class="ig-grid">{rest_html}</div></section>''' if (featured_html or rest_html) else ''}
+<section class="wrap"><div class="ig-layout">{featured_html}{f'<div class="ig-grid">{rest_html}</div>' if rest_html else ''}</div></section>''' if (featured_html or rest_html) else ''}
 
 <div class="wrap">
 {sections_html}
@@ -480,7 +496,10 @@ def build(lead):
 
 def og_card_html(lead, slug):
     """A standalone 1200x630 card matching the cover's visual language, for rendering
-    to PNG separately (e.g. via Playwright) and saving as public/spotlight/<slug>-og.png.
+    to PNG separately (e.g. via Playwright), THEN converting to JPEG (quality ~90) and
+    saving as public/spotlight/<slug>-og.jpg — see the JPEG-conversion note main() prints.
+    The JPEG conversion matters: the raw PNG render is ~700-900KB, and WhatsApp's link-
+    preview crawler silently fails to show an image at all once the file is that heavy.
     Kept mobile-safe: all essential text sits within the ~150-1050px horizontal zone
     that survives WhatsApp's center-crop on a 1200-wide canvas."""
     name = lead["name"].strip()
@@ -545,8 +564,16 @@ def main():
     og_html_path.write_text(og_card_html(lead, slug), encoding="utf-8")
 
     print(f"FILE     public/spotlight/{slug}.html\nURL      {url}\n")
-    print(f"OG CARD  {og_html_path}  (render this to a 1200x630 PNG with Playwright,")
-    print(f"         save it as public/spotlight/{slug}-og.png — referenced at {og_image})\n")
+    print(f"OG CARD  {og_html_path}")
+    print(f"         Render this to a PNG at 1200x630 with Playwright, THEN convert it to a")
+    print(f"         JPEG (Pillow: Image.open(...).convert('RGB').save(..., 'JPEG', quality=90,")
+    print(f"         optimize=True)) and save it as public/spotlight/{slug}-og.jpg")
+    print(f"         — referenced at {og_image}.")
+    print(f"         IMPORTANT: keep this file well under ~150KB. A raw Playwright PNG render of")
+    print(f"         this card is a large, mostly-gradient image (~700-900KB) — WhatsApp's link-")
+    print(f"         preview crawler silently drops the image (shows no photo at all) once it's")
+    print(f"         too heavy, even though the file loads fine in a normal browser. JPEG quality")
+    print(f"         90 typically brings it to ~50-65KB with no visible loss.\n")
     print("----- Message to send the dentist -----\n" + lead_message(lead, url))
 
 if __name__ == "__main__":
