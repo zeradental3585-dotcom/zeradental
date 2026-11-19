@@ -10,13 +10,13 @@
 <meta property="og:description" content="Indore&#x27;s Gold Medalist, Giving Smiles the Supreme Treatment — Dr. Yashee Tiwari, Supreme Dental Care &amp; Implant Centre, Indore. Featured by Zera Dental.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html">
-<meta property="og:image" content="https://zeradental.in/spotlight/dr-yashee-tiwari-indore-og.png">
+<meta property="og:image" content="https://zeradental.in/spotlight/dr-yashee-tiwari-indore-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dr. Yashee Tiwari — Indore&#x27;s Gold Medalist, Giving Smiles the Supreme Treatment">
 <meta name="twitter:description" content="Indore&#x27;s Gold Medalist, Giving Smiles the Supreme Treatment — Dr. Yashee Tiwari, Supreme Dental Care &amp; Implant Centre, Indore. Featured by Zera Dental.">
-<meta name="twitter:image" content="https://zeradental.in/spotlight/dr-yashee-tiwari-indore-og.png">
+<meta name="twitter:image" content="https://zeradental.in/spotlight/dr-yashee-tiwari-indore-og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700,9..144,900&display=swap" rel="stylesheet">
 <style>
@@ -99,9 +99,17 @@
   .ig-section-head { text-align:center; padding:44px 0 6px; }
   .ig-section-head .eyebrow { justify-content:center; }
   .ig-section-head h2 { font-size:21px; font-weight:600; margin:4px 0 0; }
-  .ig-card-featured { margin-bottom:22px; }
-  .ig-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,300px)); gap:18px; padding:0 0 44px; justify-content:center; }
-  .ig-card { display:flex; justify-content:center; }
+  /* .ig-layout holds the featured post + the rest-grid side by side on wide screens
+     (wraps to stacked on narrow ones). Instagram's embed.js sizes its iframe to match
+     the *measured* width of its container at process-time, so capping that container's
+     max-width here (not just the grid track width) is what actually stops the embed
+     from rendering oversized on desktop — relying on grid-track sizing alone let the
+     iframe overflow past its track since grid items don't shrink below their content's
+     intrinsic width by default. */
+  .ig-layout { display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:22px; padding:0 0 44px; }
+  .ig-card-featured { margin-bottom:0; }
+  .ig-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,300px)); gap:18px; justify-content:center; }
+  .ig-card { display:flex; justify-content:center; max-width:380px; width:100%; min-width:0; overflow:hidden; margin:0 auto; }
   .ig-fallback {
     width:100%; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:10px; padding:26px 18px; border-radius:18px; text-decoration:none; color:var(--ink);
@@ -196,7 +204,7 @@
 </div></section>
 
 <div class="ig-section-head wrap"><p class="eyebrow">As seen on Instagram</p><h2>Straight from @dentist_dryashee</h2></div>
-<section class="wrap"><div class="ig-card ig-card-featured"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dadf02FMLi8/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 1px 2px rgba(11,31,51,.05),0 8px 24px -12px rgba(11,31,51,.15); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"><a class="ig-fallback ig-fallback-featured" href="https://www.instagram.com/p/Dadf02FMLi8/" target="_blank" rel="noopener noreferrer">
+<section class="wrap"><div class="ig-layout"><div class="ig-card ig-card-featured"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dadf02FMLi8/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:16px; box-shadow:0 1px 2px rgba(11,31,51,.05),0 8px 24px -12px rgba(11,31,51,.15); margin:0; max-width:100%; min-width:280px; padding:0; width:100%;"><a class="ig-fallback ig-fallback-featured" href="https://www.instagram.com/p/Dadf02FMLi8/" target="_blank" rel="noopener noreferrer">
       <div class="ig-fallback-glyph">
         <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
       </div>
@@ -208,7 +216,7 @@
       </div>
       <p class="ig-fallback-text"><strong>@dentist_dryashee</strong></p>
       <span class="ig-fallback-cta">View on Instagram <span class="arrow">→</span></span>
-    </a></blockquote></div></div></section>
+    </a></blockquote></div></div></div></section>
 
 <div class="wrap">
 <section class="feature-section"><p class="eyebrow">The Interview</p><h2>A Gold Medalist with a gentle touch</h2><div class="prose"><p>Dr. Yashee Tiwari, BDS Gold Medalist, runs Supreme Dental Care &amp; Implant Centre in Indore, where implants, braces and smile makeovers are her specialty.</p><p>What stands out on her page isn&#x27;t just the qualifications — it&#x27;s how consistently she shows up. Hundreds of posts, one after another, each one a small window into the care that goes into every patient&#x27;s visit.</p></div></section><section class="feature-section"><p class="eyebrow">Why We&#x27;re Watching</p><h2>Building something special in Indore</h2><div class="prose"><p>Running a clinic and building a personal brand at the same time isn&#x27;t easy, but Dr. Yashee does both — sharing patient stories, treatment explainers and the everyday moments that make dentistry feel a little less intimidating.</p><p>That kind of consistency and heart is exactly what Zera Dental loves to spotlight.</p></div></section>
@@ -231,13 +239,13 @@
     Share This Feature
   </button>
   <div class="share-icons">
-    <a class="share-icon" href="https://wa.me/?text=I%20was%20featured%20by%20Zera%20Dental!%20Indore&#x27;s%20Gold%20Medalist,%20Giving%20Smiles%20the%20Supreme%20Treatment%20https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+    <a class="share-icon" href="https://wa.me/?text=I%20was%20featured%20by%20Zera%20Dental%21%20Indore%27s%20Gold%20Medalist%2C%20Giving%20Smiles%20the%20Supreme%20Treatment%20https%3A%2F%2Fzeradental.in%2Fspotlight%2Fdr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp" title="Share on WhatsApp">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.5 1.33 5.02L2 22l5.12-1.34A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10Zm0 18.2c-1.6 0-3.16-.43-4.52-1.24l-.32-.19-3.03.8.81-2.95-.21-.31A8.17 8.17 0 0 1 3.84 12c0-4.53 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.67 8.2-8.2 8.2Zm4.5-6.14c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
     </a>
-    <a class="share-icon" href="https://twitter.com/intent/tweet?text=I%20was%20featured%20by%20Zera%20Dental!%20Indore&#x27;s%20Gold%20Medalist,%20Giving%20Smiles%20the%20Supreme%20Treatment&url=https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on X / Twitter" title="Share on X">
+    <a class="share-icon" href="https://twitter.com/intent/tweet?text=I%20was%20featured%20by%20Zera%20Dental%21%20Indore%27s%20Gold%20Medalist%2C%20Giving%20Smiles%20the%20Supreme%20Treatment&url=https%3A%2F%2Fzeradental.in%2Fspotlight%2Fdr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on X / Twitter" title="Share on X">
       <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M18.9 2H22l-7.6 8.68L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2Zm-1.2 18h1.9L7.4 4H5.3l12.4 16Z"/></svg>
     </a>
-    <a class="share-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook">
+    <a class="share-icon" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzeradental.in%2Fspotlight%2Fdr-yashee-tiwari-indore.html" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.5 22v-8.5h2.9l.4-3.4h-3.3V8c0-1 .3-1.6 1.7-1.6h1.7V3.3C16.4 3.2 15.3 3 14 3c-2.7 0-4.5 1.6-4.5 4.6v2.5H6.6v3.4h2.9V22h4Z"/></svg>
     </a>
     <button type="button" class="share-icon" id="copyLinkBtn" data-url="https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html" aria-label="Copy link" title="Copy link">
