@@ -47,6 +47,7 @@ export default function Header() {
               {n.label}
             </Link>
           ))}
+          <a href="/spotlight/index.html" className="text-[14.5px] font-medium text-ink-500 transition-colors hover:text-ink">Spotlight</a>
         </nav>
 
         <div className="hidden items-center gap-2.5 lg:flex">
@@ -78,6 +79,7 @@ export default function Header() {
                 {n.label}
               </Link>
             ))}
+            <a href="/spotlight/index.html" onClick={() => setOpen(false)} className="rounded-lg px-2 py-3 text-base font-medium text-ink hover:bg-sand-50">Spotlight</a>
             <Link href="/free-website-audit" onClick={() => setOpen(false)} className="btn-primary mt-3 w-full">Get my free clinic audit</Link>
             <a href={WA.general} target="_blank" rel="noopener noreferrer" className="btn-wa mt-2 w-full">
               <WhatsAppIcon className="h-4 w-4" /> Chat on WhatsApp
