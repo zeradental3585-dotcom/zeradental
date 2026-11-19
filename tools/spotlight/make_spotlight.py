@@ -182,7 +182,11 @@ def build(lead):
     # it into the address bar, which masked this bug in manual testing — but a plain anchor
     # click, and especially mobile/in-app WebViews (WhatsApp's own browser, Instagram, etc.),
     # do NOT get that same auto-correction and can fail to open or mangle the shared text.
-    share_text = f"I was featured by Zera Dental! {tagline}"
+    # Third-person phrasing on purpose: this text is shared by ANYONE (a patient, a
+    # colleague, a friend, a stranger who liked the page) — not only by the dentist
+    # herself. "I was featured..." only makes sense in the dentist's own voice, so it
+    # breaks the moment someone else hits share. Keep it readable from any sharer's POV.
+    share_text = f"{tagline} — meet {name}, featured in Zera Dental Spotlight."
     share_text_full = f"{share_text} {url}"
     def _enc(s):
         return _urlquote(s, safe="")
@@ -412,7 +416,7 @@ def build(lead):
 
 <section class="share-section"><div class="wrap">
   <p class="eyebrow eyebrow-center">Spread the word</p>
-  <h2>Proud of this feature? Share it in one tap ✨</h2>
+  <h2>Enjoyed this feature? Share it in one tap ✨</h2>
   <p class="share-sub">The more this gets shared, the more it helps {E(name.split(" ")[-1] if " " in name else name)} — and anyone else who sees it.</p>
   <button type="button" id="nativeShareBtn" class="btn btn-share" data-url="{E(url)}" data-title="{E(name)} — {E(tagline)}" data-text="{E(share_text)}">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
