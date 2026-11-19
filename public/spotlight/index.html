@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zera Dental Spotlight — All Featured Dentists</title>
+<meta name="description" content="Every dentist Zera Dental has featured in the Spotlight series — real clinics, real Google ratings, free editorial features with no strings attached.">
+<link rel="canonical" href="https://zeradental.in/spotlight/index.html">
+<meta property="og:title" content="Zera Dental Spotlight — All Featured Dentists">
+<meta property="og:description" content="Every dentist Zera Dental has featured in the Spotlight series.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zeradental.in/spotlight/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700,9..144,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#0B1F33; --ink-700:#12314d; --ink-500:#3d5a75; --ink-300:#4e6c89;
+    --mint-50:#eefbf7; --mint-100:#d3f5ec; --mint-200:#a7ebda; --mint-400:#38c9a6; --mint-500:#12b48d; --mint-600:#0d9273; --mint-700:#0b7359; --mint-800:#095b45;
+    --sand-50:#fbfaf7; --sand-100:#f4f1ea;
+    --gold:#d8b45e; --gold-dim:#a9854a;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; font-family:'Plus Jakarta Sans', system-ui, sans-serif; color:var(--ink); background:var(--sand-50); line-height:1.6; }
+  h1,h2,h3,.display { font-family:'Fraunces', Georgia, serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  a { color:inherit; text-decoration:none; }
+
+  header.site { padding:16px 0; border-bottom:1px solid rgba(11,31,51,.07); background:#fff; }
+  header.site .wrap { display:flex; align-items:center; justify-content:space-between; max-width:1080px; }
+  .brand { display:flex; align-items:center; gap:10px; }
+  .brand .box { display:grid; place-items:center; width:36px; height:36px; border-radius:10px; background:var(--ink); color:var(--mint-200); font-size:18px; }
+  .brand .word { font-weight:800; font-size:17px; letter-spacing:-.01em; color:var(--ink); }
+  .brand .word span { color:var(--mint-700); }
+  .back-link { font-size:13px; font-weight:700; color:var(--ink-500); letter-spacing:.02em; }
+
+  .cover {
+    position:relative; overflow:hidden; background:radial-gradient(120% 140% at 50% -10%, #173a5c 0%, var(--ink) 55%, #081525 100%);
+    color:#fff; padding:56px 0 64px; text-align:center;
+  }
+  .cover::before {
+    content:""; position:absolute; inset:0; opacity:.5;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(56,201,166,.18), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(216,180,94,.14), transparent 45%);
+    pointer-events:none;
+  }
+  .cover-inner { position:relative; z-index:1; }
+  .masthead {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:11.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--mint-200); margin:0 0 18px;
+  }
+  .masthead .rule { width:28px; height:1px; background:rgba(167,235,218,.45); }
+  .cover h1.display {
+    font-size:clamp(30px,5.4vw,48px); font-weight:600; line-height:1.14; margin:0 0 14px; max-width:720px;
+    margin-left:auto; margin-right:auto; letter-spacing:-.01em;
+  }
+  .cover p.sub { color:rgba(255,255,255,.7); font-size:16px; max-width:560px; margin:0 auto; }
+
+  .issues-wrap { padding:52px 0 72px; }
+  .issues-grid {
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px;
+  }
+  .issue-card {
+    display:block; background:#fff; border-radius:20px; padding:26px 24px 24px;
+    border:1px solid rgba(11,31,51,.08); box-shadow:0 10px 30px -20px rgba(11,31,51,.2);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .issue-card:hover { transform:translateY(-3px); box-shadow:0 18px 36px -18px rgba(11,31,51,.3); }
+  .issue-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .issue-no { font-size:11px; font-weight:800; letter-spacing:.14em; color:var(--gold-dim); text-transform:uppercase; }
+  .issue-medallion {
+    width:44px; height:44px; border-radius:50%; display:grid; place-items:center;
+    background:linear-gradient(145deg, var(--mint-700), var(--ink-700));
+    box-shadow:0 0 0 1px rgba(216,180,94,.55);
+  }
+  .issue-medallion span { font-family:'Fraunces',serif; font-weight:600; font-size:15px; color:var(--gold); }
+  .issue-card h3 { font-size:19px; font-weight:600; line-height:1.3; margin:0 0 10px; letter-spacing:-.01em; }
+  .issue-name { font-size:14.5px; font-weight:700; margin:0 0 2px; }
+  .issue-clinic { color:var(--mint-700); font-weight:500; }
+  .issue-place { font-size:13px; color:var(--ink-500); margin:0 0 10px; }
+  .issue-stats { font-size:13px; color:var(--ink-500); margin:0 0 16px; font-weight:600; }
+  .issue-cta { display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:800; color:var(--mint-700); text-transform:uppercase; letter-spacing:.04em; }
+  .issue-card .arrow { transition:transform .15s ease; }
+  .issue-card:hover .arrow { transform:translateX(3px); }
+
+  .cta { text-align:center; background:linear-gradient(160deg,var(--mint-100),var(--sand-100)); border-radius:22px; padding:44px 24px; margin:0 0 60px; }
+  .cta h2 { font-size:23px; margin:0 0 10px; }
+  .cta p { color:var(--ink-500); margin:0 0 22px; font-size:15px; max-width:480px; margin-left:auto; margin-right:auto; }
+  .btn { display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff !important; font-weight:700; font-size:15px; padding:13px 26px; border-radius:12px; }
+  .btn.secondary { background:#fff; color:var(--ink) !important; border:1px solid rgba(11,31,51,.15); margin-left:10px; }
+
+  footer { background:var(--ink); color:rgba(255,255,255,.75); padding:34px 0; font-size:13px; }
+  footer .wrap { display:flex; flex-direction:column; gap:10px; align-items:center; text-align:center; max-width:1080px; }
+  footer a { color:var(--mint-200); }
+
+  @media (max-width:480px) {
+    .cover { padding:44px 0 50px; }
+    .btn.secondary { margin-left:0; margin-top:10px; display:block; }
+  }
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="https://zeradental.in"><span class="box">🦷</span><span class="word">Zera<span>Dental</span></span></a>
+  <a class="back-link" href="https://zeradental.in">← zeradental.in</a>
+</div></header>
+
+<section class="cover"><div class="wrap cover-inner">
+  <div class="masthead"><span class="rule"></span>ZERA DENTAL SPOTLIGHT<span class="rule"></span></div>
+  <h1 class="display">Dentists we think deserve a bigger audience</h1>
+  <p class="sub">Free editorial features for real clinics doing great work online — no strings attached. 4 issues so far.</p>
+</div></section>
+
+<div class="wrap issues-wrap">
+  <div class="issues-grid">
+    <a class="issue-card" href="https://zeradental.in/spotlight/dr-riddhi-dave-vadodara.html">
+      <div class="issue-card-top">
+        <span class="issue-no">ISSUE 004</span>
+        <div class="issue-medallion"><span>RD</span></div>
+      </div>
+      <h3>Karelibaug&#x27;s 5-Star Dentist, Building a Following One Reel at a Time</h3>
+      <p class="issue-name">Dr. Riddhi Dave <span class="issue-clinic">· Shrij Dental Care</span></p>
+      <p class="issue-place">Karelibaug, Vadodara</p>
+      <p class="issue-stats"><span class="mini-stat">★ 5.0</span> · <span class="mini-stat">208 reviews</span></p>
+      <span class="issue-cta">Read the feature <span class="arrow">→</span></span>
+    </a><a class="issue-card" href="https://zeradental.in/spotlight/dr-priyanka-sharma-jaipur.html">
+      <div class="issue-card-top">
+        <span class="issue-no">ISSUE 003</span>
+        <div class="issue-medallion"><span>PS</span></div>
+      </div>
+      <h3>Jaipur&#x27;s Rising Prosthodontist, One Confident Smile at a Time</h3>
+      <p class="issue-name">Dr. Priyanka Sharma <span class="issue-clinic">· Shri Dental Hospital</span></p>
+      <p class="issue-place">Murlipura, Jaipur</p>
+      <p class="issue-stats"><span class="mini-stat">★ 4.6</span> · <span class="mini-stat">11 reviews</span></p>
+      <span class="issue-cta">Read the feature <span class="arrow">→</span></span>
+    </a><a class="issue-card" href="https://zeradental.in/spotlight/dr-apoorva-chaudhary-sawai-madhopur.html">
+      <div class="issue-card-top">
+        <span class="issue-no">ISSUE 002</span>
+        <div class="issue-medallion"><span>AC</span></div>
+      </div>
+      <h3>Sawai Madhopur&#x27;s Dentist Who Shows Up, One Smile at a Time</h3>
+      <p class="issue-name">Dr. Apoorva Chaudhary <span class="issue-clinic">· Dr. Apoorva&#x27;s Dental Clinic</span></p>
+      <p class="issue-place">Balmandir Colony, Sawai Madhopur</p>
+      <p class="issue-stats"><span class="mini-stat">★ 4.9</span> · <span class="mini-stat">150 reviews</span></p>
+      <span class="issue-cta">Read the feature <span class="arrow">→</span></span>
+    </a><a class="issue-card" href="https://zeradental.in/spotlight/dr-yashee-tiwari-indore.html">
+      <div class="issue-card-top">
+        <span class="issue-no">ISSUE 001</span>
+        <div class="issue-medallion"><span>YT</span></div>
+      </div>
+      <h3>Indore&#x27;s Gold Medalist, Giving Smiles the Supreme Treatment</h3>
+      <p class="issue-name">Dr. Yashee Tiwari <span class="issue-clinic">· Supreme Dental Care &amp; Implant Centre</span></p>
+      <p class="issue-place">Indore</p>
+      <p class="issue-stats"><span class="mini-stat">★ 4.7</span> · <span class="mini-stat">82 reviews</span></p>
+      <span class="issue-cta">Read the feature <span class="arrow">→</span></span>
+    </a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta">
+    <h2>Know a dentist who deserves this?</h2>
+    <p>If you're a dentist doing real work with a following that doesn't match the effort yet, or you know one who is, tell us on WhatsApp — features are completely free.</p>
+    <a class="btn" href="https://wa.me/919835102324?text=Hi,%20I%20saw%20the%20Zera%20Dental%20Spotlight%20page%20and%20wanted%20to%20know%20more." target="_blank" rel="noopener noreferrer">WhatsApp Zera Dental</a>
+    <a class="btn secondary" href="https://zeradental.in" target="_blank" rel="noopener noreferrer">Visit zeradental.in</a>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <p>© 2026 Zera Dental, a property of Zera Technologies. All rights reserved.</p>
+  <p>Designed and developed by <a href="https://zeratech.io" target="_blank" rel="noopener noreferrer">Zera Technologies</a></p>
+  <p><a href="mailto:hello@zeradental.in">hello@zeradental.in</a> · <a href="https://wa.me/919835102324" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+</div></footer>
+</body>
+</html>
