@@ -5,7 +5,15 @@ import { SITE, wa } from '@/lib/site';
 import { WhatsAppIcon, Check, Arrow } from './Icons';
 
 /* "See your clinic's website" — a dentist fills four fields and gets a real preview site on
- * sites.zeradental.in in about a minute. The lead also goes to the Zera Dental Leads sheet. */
+ * sites.zeradental.in in about a minute. The lead also goes to the Zera Dental Leads sheet.
+ *
+ * GRACEFUL DEGRADATION (added 22 Nov 2026): the automated builder (sites.zeradental.in/api/public/preview)
+ * can be down or overloaded. When it fails we never show the visitor a dead-end error — we still
+ * capture the lead (now flagged for a human to build manually, with full context: doctor, treatments,
+ * maps link) and show a positive "we're hand-building this for you" state instead, with a soft
+ * WhatsApp nudge and a link to the portfolio so the visitor stays engaged while they wait. This
+ * converts every failure into a captured, actionable lead instead of a bounce. If the automated
+ * builder is fixed later, the success path below is untouched and keeps working instantly as before. */
 
 const ENDPOINT = process.env.NEXT_PUBLIC_PREVIEW_ENDPOINT || 'https://sites.zeradental.in/api/public/preview';
 
@@ -30,6 +38,7 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
   const [step, setStep] = useState(0);
   const [err, setErr] = useState<string | null>(null);
   const [done, setDone] = useState<Result | null>(null);
+  const [pending, setPending] = useState<{ clinic: string } | null>(null);
 
   useEffect(() => {
     if (!busy) return;
@@ -100,8 +109,48 @@ export default function PreviewBuilder({ source = 'Website preview builder' }: {
       track('generate_lead', { lead_source: 'website-preview', page_path: window.location.pathname });
       return;
     }
-    logLead(`Tried the website preview builder but it failed (${r.error ?? 'error'}). Make one by hand.${f.maps.trim() ? ` Maps: ${f.maps.trim()}` : ''}`);
-    setErr(r.error ?? 'Something went wrong.');
+    // Automated builder failed. Never dead-end the visitor on an error: capture the
+    // lead flagged for a MANUAL build (full context so it can be built from this row
+    // alone — doctor, treatments, maps link — via the lead-preview process), count it
+    // as a real generated lead in GA4 (a human will fulfil it, so it is one), and show
+    // a positive "we're building it personally" state instead of setErr(...).
+    const treatmentLabels = picked.map((k) => TREATMENTS.find(([key]) => key === k)?.[1]).filter(Boolean).join(', ') || 'none picked';
+    logLead(
+      `AUTOMATED BUILDER FAILED (${r.error ?? 'error'}) — queued for MANUAL build, please action within a few hours. ` +
+      `Doctor: ${f.doctor.trim() || '—'}. Treatments: ${treatmentLabels}.` +
+      (f.maps.trim() ? ` Maps: ${f.maps.trim()}` : ' No maps link given — may need to ask for one.') +
+      ' Visitor was told to expect their preview on WhatsApp within a few hours.'
+    );
+    track('generate_lead', { lead_source: 'website-preview-manual', page_path: window.location.pathname });
+    setPending({ clinic: f.clinic.trim() });
+  }
+
+  if (pending) {
+    const chat = wa(`Hi Zera Dental, I just requested a free website preview for ${pending.clinic}. Looking forward to seeing it!`);
+    return (
+      <div className="card text-center" role="status">
+        <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-mint-500 text-white">
+          <Check className="h-6 w-6" />
+        </div>
+        <h2 className="mt-4 font-display text-[26px] leading-tight tracking-[-.01em] text-ink">You&apos;re in! We&apos;re building it now.</h2>
+        <p className="mx-auto mt-2 max-w-md text-[15px] text-ink-500">
+          Our builder is handling a lot of requests right now, so our team is hand-crafting {pending.clinic}&apos;s
+          website personally to make sure it&apos;s right. We&apos;ll send the link straight to your WhatsApp
+          within a few hours — usually sooner.
+        </p>
+        <a href="/portfolio" className="btn-primary mt-6 w-full sm:w-auto">
+          See examples of what we build <Arrow className="h-4 w-4" />
+        </a>
+        <div className="mt-3 flex justify-center">
+          <a href={chat} target="_blank" rel="noopener noreferrer" className="btn-wa">
+            <WhatsAppIcon className="h-4 w-4" /> Chat with us now instead
+          </a>
+        </div>
+        <p className="mt-5 text-[13px] text-ink-300">
+          Free, no payment, no call. Only you get the preview link.
+        </p>
+      </div>
+    );
   }
 
   if (done) {
