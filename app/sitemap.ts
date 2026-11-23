@@ -40,5 +40,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...core, ...services, ...cities, ...posts];
+  // Spotlight is a set of static HTML files under public/spotlight/, not a Next.js route —
+  // there's no central list to map through, so these are kept in sync by hand when a new
+  // issue is added.
+  const spotlight: MetadataRoute.Sitemap = [
+    { url: `${SITE.url}/spotlight/index.html`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${SITE.url}/spotlight/dr-riddhi-dave-vadodara.html`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${SITE.url}/spotlight/dr-priyanka-sharma-jaipur.html`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${SITE.url}/spotlight/dr-apoorva-chaudhary-sawai-madhopur.html`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${SITE.url}/spotlight/dr-yashee-tiwari-indore.html`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },
+  ];
+
+  return [...core, ...services, ...cities, ...posts, ...spotlight];
 }
