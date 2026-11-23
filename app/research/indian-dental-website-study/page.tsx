@@ -34,10 +34,10 @@ export default function StudyPage() {
           '@type': 'Dataset',
           name: 'Indian dental clinic website audit, round 1',
           description: STUDY.metaDesc,
-          creator: { '@id': `${SITE.url}/#organization` },
+          creator: { '@type': 'Organization', name: SITE.name, url: SITE.url },
           license: 'https://creativecommons.org/licenses/by/4.0/',
           temporalCoverage: '2026-08',
-          spatialCoverage: { '@type': 'Country', name: 'India' },
+          spatialCoverage: { '@type': 'Place', name: 'India' },
         },
       ]} />
 
